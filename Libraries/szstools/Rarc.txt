@@ -1,0 +1,58 @@
+RARC archives
+=============
+
+Version 1
+
+
+If you de-Yaz0 a Supermario Sunshine .szs file, you get a file starting with "RARC". This file is an archive file and contains several other files. This document describes the structure of these RARC files (note that I got all this information by staring at these files in a hex editor, so it may not be entirely accurate...it seems to work, though).
+
+The file starts with an RarcHeader:
+
+struct RarcHeader
+{
+  char type[4]; //'RARC'
+  u32 size; //size of the file
+  u32 unknown;
+  u32 dataStartOffset; //where does the actual data start? You have to add 0x20 to this value.
+  u32 unknown2[4];
+  
+  u32 numNodes;
+  u32 unknown3[2];
+  u32 fileEntriesOffset;
+  u32 unknown4;
+  u32 stringTableOffset; //where is the string table stored? You have to add 0x20 to this value.
+  u32 unknown5[2];
+};
+
+Next are RarcHeader.numNodes Node structures:
+
+struct Node
+{
+  char type[4];
+  u32 filenameOffset; //directory name, offset into string table
+  u16 unknown;
+  u16 numFileEntries; //how many files belong to this node?
+  u32 firstFileEntryOffset;
+};
+
+Each RARC file contains at least one Node, the 'ROOT' node. For each subdirectory in the archive, there's another Node (so each Node represents a directory). Each Node contains files and directories, represented by FileEntry structures:
+
+struct FileEntry
+{
+  u16 id; //file id. If this is 0xFFFF, then this entry is a subdirectory link
+  u16 unknown;
+  u16 unknown2;
+  u16 filenameOffset; //file/subdir name, offset into string table
+  u32 dataOffset; //offset to file data (for subdirs: index of Node representing the subdir)
+  u32 dataSize; //size of data
+  u32 zero; //seems to be always '0'
+};
+
+To read the archive, you read the root node and its file entries. For each subdir in the root node's fileentries, you read the corresponding node and its file entries. For each file in the fileentries, you dump its data.
+
+thakis (http://www.amnoid.de/gc/)
+
+Changelog
+=========
+
+20050211: Initial release

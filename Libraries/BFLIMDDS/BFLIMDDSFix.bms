@@ -1,0 +1,40 @@
+# Wii U - TexConv2 DDS Fix
+# Because for some reason TexConv2 doesn't set up DDS headers correctly for 24-and-32-bit RGBA textures
+# Written by Random Talking Bush
+
+endian big
+
+goto 0x54
+get DXTCheck long
+if DXTCheck = 0
+
+get NAME basename
+string NAME + .dds
+
+log MEMORY_FILE 0 0
+
+get FILESIZE asize
+
+append
+log MEMORY_FILE 0 FILESIZE
+append
+
+goto 0x5C
+get RGB565Check byte
+
+if RGB565Check = 0x00
+putVarChr MEMORY_FILE 0x5C 0x1F byte
+putVarChr MEMORY_FILE 0x60 0xE007 short
+putVarChr MEMORY_FILE 0x65 0xF8 byte
+endif
+
+if RGB565Check = 0xFF
+putVarChr MEMORY_FILE 0x50 0x41 byte
+putVarChr MEMORY_FILE 0x6B 0xFF byte
+endif
+
+log NAME 0 FILESIZE MEMORY_FILE
+
+endif
+
+endfunction

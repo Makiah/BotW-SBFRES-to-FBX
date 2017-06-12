@@ -1,0 +1,59 @@
+# DDS top-layer mipmap remover
+# Because mipmaps are dumb. (Or maybe it's just me.)
+# Written by Random Talking Bush
+
+endian little
+
+goto 0x0C
+
+get HEIGHT short
+
+goto 0x02 0 SEEK_CUR
+get WIDTH short
+goto 0x0A 0 SEEK_CUR
+get MIPMAPS byte
+goto 0x37 0 SEEK_CUR
+
+get FORMAT long
+get DDSSIZE asize
+math DDSSIZE - 0x80
+
+math BLANKMIP = HEIGHT
+math BLANKMIP * WIDTH
+
+if FORMAT = 0x31545844 # DXT1
+math BLANKMIP / 2
+endif
+
+if FORMAT = 0x31495441 # ATI1
+math BLANKMIP / 2
+endif
+
+if FORMAT = 0x00000000 # RGBA8888
+math BLANKMIP * 4
+endif
+
+math HEIGHT / 2
+math WIDTH / 2
+math MIPMAPS - 1
+math DDSSIZE - BLANKMIP
+math DDSSKIP = 0x80
+math DDSSKIP + BLANKMIP
+
+log MEMORY_FILE 0 0x80 0
+putVarChr MEMORY_FILE 0x0C HEIGHT short
+putVarChr MEMORY_FILE 0x10 WIDTH short
+putVarChr MEMORY_FILE 0x1C MIPMAPS byte
+
+append
+log MEMORY_FILE DDSSKIP DDSSIZE 0
+append
+
+get NAME basename
+get SIZE asize MEMORY_FILE
+string NAME + .dds
+log NAME 0 SIZE MEMORY_FILE
+
+next i
+
+endfunction

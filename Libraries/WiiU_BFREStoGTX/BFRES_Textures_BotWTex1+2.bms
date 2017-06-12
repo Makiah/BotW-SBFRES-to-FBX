@@ -1,0 +1,265 @@
+# Wii U - BFRES to GTX Converter for Legend of Zelda: Breath of the Wild
+# Make sure both the Tex1 and Tex2 are in the same folder and have the BFRES extension.
+# Written by Random Talking Bush
+
+endian big
+
+get TEX1FILENAME basename
+string TEX1FILENAME - .Tex1
+string TEX1FILENAME - .Tex2
+string TEX1FILENAME += .Tex1
+string TEX1FILENAME += .bfres
+get TEX2FILENAME basename
+string TEX2FILENAME - .Tex1
+string TEX2FILENAME - .Tex2
+string TEX2FILENAME += .Tex2
+string TEX2FILENAME += .bfres
+
+open FDSE TEX1FILENAME 0
+open FDSE TEX2FILENAME 1
+
+idstring "FRES" 0
+
+goto 0x24 0
+get FILEOFFSET1 long 0
+math FILEOFFSET1 += 0x24
+
+goto FILEOFFSET1 0
+get HEADERSIZE long 0
+get FILETOTAL1 long 0
+get UNKNOWN long 0
+get UNKNOWN long 0
+get UNKNOWN long 0
+get UNKNOWN long 0
+
+goto 0x24 1
+get FILEOFFSET2 long 1
+math FILEOFFSET2 += 0x24
+
+goto FILEOFFSET2 1
+get HEADERSIZE long 1
+get FILETOTAL2 long 1
+get UNKNOWN long 1
+get UNKNOWN long 1
+get UNKNOWN long 1
+get UNKNOWN long 1
+
+for i = 0 < FILETOTAL1
+
+get UNKNOWN long 0
+get UNKNOWN long 0
+savepos NAMEOFFSETPLUS1 0
+get NAMEOFFSET1 long 0
+savepos FTEXOFFSETPLUS1 0
+get FTEXOFFSET1 long 0
+math NAMEOFFSET1 += NAMEOFFSETPLUS1
+math FTEXOFFSET1 += FTEXOFFSETPLUS1
+
+savepos BACKTOLIST1 0
+goto NAMEOFFSET1 0
+get NAME1 string 0
+putarray 0 i NAME1
+putarray 1 i FTEXOFFSET1
+goto BACKTOLIST1 0
+
+
+get UNKNOWN long 1
+get UNKNOWN long 1
+savepos NAMEOFFSETPLUS2 1
+get NAMEOFFSET2 long 1
+savepos FTEXOFFSETPLUS2 1
+get FTEXOFFSET2 long 1
+math NAMEOFFSET2 += NAMEOFFSETPLUS2
+math FTEXOFFSET2 += FTEXOFFSETPLUS2
+
+savepos BACKTOLIST2 1
+goto NAMEOFFSET2 1
+get NAME2 string 1
+putarray 2 i NAME2
+putarray 3 i FTEXOFFSET2
+goto BACKTOLIST2 1
+
+next i
+
+goto 0xD070 0
+goto 0xD070 1
+
+for i = 0 < FILETOTAL1
+
+get PATH basename
+string PATH - .Tex1
+string PATH - .Tex2
+string PATH += /
+getarray NAME 0 i
+getarray FTEXOFFSET1 1 i
+getarray FTEXOFFSET2 3 i
+string PATH += NAME
+goto FTEXOFFSET1 0
+goto FTEXOFFSET2 1
+
+get FTEX long 0
+savepos WRITECHUNK1 0
+get VERSION long 0
+get WIDTH1 long 0
+get HEIGHT1 long 0
+
+get UNKNOWN long 0
+get UNKNOWN long 0
+get UNKNOWN short 0
+get FORMAT1 byte 0
+get FORMAT2 byte 0
+get UNKNOWN long 0
+
+get UNKNOWN long 0
+get LENGTH1 long 0
+get GTXINFO long 0
+get MIPLENGTH1 long 0
+
+get GTXINFO long 0
+get GTXINFO long 0
+get GTXINFO long 0
+get GTXINFO long 0
+
+get GTXINFO long 0
+get GTXINFO long 0
+get GTXINFO long 0
+get GTXINFO long 0
+
+get GTXINFO long 0
+get GTXINFO long 0
+get GTXINFO long 0
+get GTXINFO long 0
+
+get GTXINFO long 0
+get GTXINFO long 0
+get GTXINFO long 0
+get GTXINFO long 0
+
+get GTXINFO long 0
+get GTXINFO long 0
+get GTXINFO long 0
+get GTXINFO long 0
+
+get GTXINFO long 0
+get GTXINFO long 0
+get GTXINFO long 0
+get GTXINFO long 0
+
+get GTXINFO long 0
+get GTXINFO long 0
+get GTXINFO long 0
+get GTXINFO long 0
+
+get GTXINFO long 0
+get GTXINFO long 0
+get GTXINFO long 0
+get GTXINFO long 0
+
+savepos DATAOFFSTART1 0
+get DATAOFFSET1 long 0
+math DATAOFFSET1 += DATAOFFSTART1
+savepos MIPOFFSTART1 0
+get MIPOFFSET1 long 0
+math MIPOFFSET1 += MIPOFFSTART1
+get UNKNOWN long 0
+get UNKNOWN long 0
+
+
+get FTEX long 1
+savepos WRITECHUNK2 1
+get VERSION long 1
+get WIDTH2 long 1
+get HEIGHT2 long 1
+
+get UNKNOWN long 1
+get UNKNOWN long 1
+get UNKNOWN short 1
+get FORMAT1 byte 1
+get FORMAT2 byte 1
+get UNKNOWN long 1
+
+get UNKNOWN long 1
+get LENGTH2 long 1
+get GTXINFO long 1
+get MIPLENGTH2 long 1
+
+get GTXINFO long 1
+get GTXINFO long 1
+get GTXINFO long 1
+get GTXINFO long 1
+
+get GTXINFO long 1
+get GTXINFO long 1
+get GTXINFO long 1
+get GTXINFO long 1
+
+get GTXINFO long 1
+get GTXINFO long 1
+get GTXINFO long 1
+get GTXINFO long 1
+
+get GTXINFO long 1
+get GTXINFO long 1
+get GTXINFO long 1
+get GTXINFO long 1
+
+get GTXINFO long 1
+get GTXINFO long 1
+get GTXINFO long 1
+get GTXINFO long 1
+
+get GTXINFO long 1
+get GTXINFO long 1
+get GTXINFO long 1
+get GTXINFO long 1
+
+get GTXINFO long 1
+get GTXINFO long 1
+get GTXINFO long 1
+get GTXINFO long 1
+
+get GTXINFO long 1
+get GTXINFO long 1
+get GTXINFO long 1
+get GTXINFO long 1
+
+savepos DATAOFFSTART2 1
+get DATAOFFSET2 long 1
+math DATAOFFSET2 += DATAOFFSTART2
+savepos MIPOFFSTART2 1
+get MIPOFFSET2 long 1
+math MIPOFFSET2 += MIPOFFSTART2
+get UNKNOWN long 1
+get UNKNOWN long 1
+
+log MEMORY_FILE 0 0
+log MEMORY_FILE2 0 0
+log MEMORY_FILE3 0 0
+log MEMORY_FILE4 0 0
+log MEMORY_FILE5 0 0
+
+set MEMORY_FILE binary "\x47\x66\x78\x32\x00\x00\x00\x20\x00\x00\x00\x07\x00\x00\x00\x01\x00\x00\x00\x02\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x42\x4C\x4B\x7B\x00\x00\x00\x20\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x0B\x00\x00\x00\x9C\x00\x00\x00\x00\x00\x00\x00\x00"
+set MEMORY_FILE2 binary "\x42\x4C\x4B\x7B\x00\x00\x00\x20\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x0C\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00"
+set MEMORY_FILE4 binary "\x42\x4C\x4B\x7B\x00\x00\x00\x20\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x0D\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00"
+set MEMORY_FILE5 binary "\x42\x4C\x4B\x7B\x00\x00\x00\x20\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00"
+putVarChr MEMORY_FILE3 LENGTH1 0
+putVarChr MEMORY_FILE2 0x14 LENGTH1 long
+putVarChr MEMORY_FILE4 0x14 MIPLENGTH2 long
+
+append
+log MEMORY_FILE WRITECHUNK1 0x9C 0
+putVarChr MEMORY_FILE 0x56 0x00 byte
+log MEMORY_FILE 0 0x20 MEMORY_FILE2
+log MEMORY_FILE DATAOFFSET1 LENGTH1 0
+log MEMORY_FILE 0 0x20 MEMORY_FILE4
+log MEMORY_FILE DATAOFFSET2 MIPLENGTH2 1
+log MEMORY_FILE 0 0x20 MEMORY_FILE5
+append
+
+get SIZE asize MEMORY_FILE
+string PATH + .gtx
+log PATH 0 SIZE MEMORY_FILE
+
+next i
+
+endfunction

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/BOTW Model Extraction V2.iml" filepath="$PROJECT_DIR$/.idea/BOTW Model Extraction V2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../BOTWModelExtractionV2/.idea/BOTW Model Extraction V2.iml" filepath="$PROJECT_DIR$/../BOTWModelExtractionV2/.idea/BOTW Model Extraction V2.iml" />
     </modules>
   </component>
 </project>
