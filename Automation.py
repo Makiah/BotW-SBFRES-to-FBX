@@ -184,6 +184,7 @@ def addSBFRESToWorkspaceAndExtract(sbfresPath: str):
     return extractSBFREStoRARC(sbfresFilePath)
 
 # Extract every file from the pair list database.
+
 for currentModelTexturePair in mtPairList:
     # Output to the user what we are currently extracting and update the sbfresState pending model.
     print("Currently extracting " + currentModelTexturePair.itemName)
