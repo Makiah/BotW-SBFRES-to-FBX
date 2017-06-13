@@ -195,16 +195,16 @@ for currentModelTexturePair in mtPairList:
     openedStateFile.close() # you HAVE to close the file or it won't work.
 
     # Model extraction
-    rarcFilePath = addSBFRESToWorkspaceAndExtract(currentModelTexturePair.modelPath)
-    if rarcFilePath != "":
+    if currentModelTexturePair.modelPath != "":
+        rarcFilePath = addSBFRESToWorkspaceAndExtract(currentModelTexturePair.modelPath)
         #Rename to BFRES
         bfresFilePath = shutil.move(rarcFilePath, os.path.join(os.path.dirname(rarcFilePath), getFilenameFromPath(rarcFilePath) + ".bfres"))
         #Add to database.
         addToDatabase(bfresFilePath)
 
     # Texture extraction
-    rarcFilePath = addSBFRESToWorkspaceAndExtract(currentModelTexturePair.texturePath)
-    if rarcFilePath != "":
+    if currentModelTexturePair.texturePath != "":
+        rarcFilePath = addSBFRESToWorkspaceAndExtract(currentModelTexturePair.texturePath)
         # Rename the file to texturefile.rarc.
         texturefile = shutil.move(rarcFilePath, "texturefile.rarc")
 
