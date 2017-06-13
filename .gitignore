@@ -47,3 +47,7 @@ com_crashlytics_export_strings.xml
 crashlytics.properties
 crashlytics-build.properties
 fabric.properties
+
+# The components of the project which are rebuilt or too large.
+ExtractionDatabase/*
+ExtractionWorkspace/*
