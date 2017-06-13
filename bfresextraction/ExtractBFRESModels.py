@@ -196,7 +196,7 @@ for currentModelTexturePair in mtPairList:
             rarcFilePath = addSBFRESToWorkspaceAndExtract(currentModelTexturePair.texturePath)
 
             # Rename the file to texturefile.rarc.
-            texturefile = shutil.move(rarcFilePath, "texturefile.rarc")
+            texturefile = shutil.move(rarcFilePath, os.path.join(os.path.dirname(rarcFilePath), "texturefile.rarc"))
 
             # Extract GTX files with QuickBMS and script made by RTB.
             call(os.path.join(initialWD, "Libraries", "quickbms", "quickbms.exe"), [os.path.join(initialWD, "Libraries", "WiiU_BFREStoGTX", "BFRES_Textures_NoMips_BotWTex1Only.bms"), texturefile, workspacePath])

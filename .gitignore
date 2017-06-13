@@ -49,5 +49,7 @@ crashlytics-build.properties
 fabric.properties
 
 # The components of the project which are rebuilt or too large.
-ExtractionDatabase/*
-ExtractionWorkspace/*
+bfresextraction/BFRESDatabase/*
+bfresextraction/ExtractionWorkspace/*
+fbxextraction/FBXDatabase/*
+fbxextraction/__ModelLoadingWorkspace/*
