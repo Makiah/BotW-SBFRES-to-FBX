@@ -2,6 +2,7 @@
 import os
 import subprocess
 import shutil
+import traceback
 
 # Will vary based on other people's set /ps.
 sbfresCompilation = "Z:\Desktop\BOTW\SBFRES Compilation"
@@ -18,20 +19,22 @@ def emptyFolder(folderPath):
         for d in dirs:
             shutil.rmtree(os.path.join(root, d))
 
-# Set up variables.
+# Register and empty workspace.
 workspacePath = os.path.join(initialWD, "ExtractionWorkspace")
-databasePath = os.path.join(initialWD, "ExtractionDatabase")
-# Used to move all folders over and all executables.
-# Prepare for new session.
 emptyFolder(os.path.join(initialWD, "ExtractionWorkspace"))
 
-# Set up the required components for DDS conversion (don't want to compromise the integrity of these Library files)
+# Set up database reference.
+databasePath = os.path.join(initialWD, "ExtractionDatabase")
+
+
+# GTX to DDS conversion libraries.
 os.makedirs(os.path.join(workspacePath,"OutDDS_Lossless"))
 os.makedirs(os.path.join(workspacePath, "OutDDS"))
 os.makedirs(os.path.join(workspacePath, "Convert"))
+convertFolder = os.path.join(workspacePath, "Convert")
+outDDSLosslessFolder = os.path.join(workspacePath, "OutDDS_Lossless")
+transparencyFixFolder = os.path.join(workspacePath, "TransparencyFix")
 os.makedirs(os.path.join(workspacePath, "TransparencyFix"))
-
-# I could use call("copy", [...]) but this must be a better option.
 texConv2Library = os.path.join(initialWD, "Libraries", "TexConv2")
 shutil.copy(os.path.join(texConv2Library, "convertGTX.bat"), workspacePath)
 shutil.copy(os.path.join(texConv2Library, "hax.py"), workspacePath)
@@ -40,14 +43,11 @@ shutil.copy(os.path.join(texConv2Library, "gfd.dll"), workspacePath)
 shutil.copy(os.path.join(texConv2Library, "texUtils.dll"), workspacePath)
 shutil.copy(os.path.join(texConv2Library, "TexConv2.exe"), workspacePath)
 
-# PNG Conversion libraries
+# DDS to PNG Conversion libraries
 os.makedirs(os.path.join(workspacePath, "ToPNGConvert"))
+pngConvertFolder = os.path.join(workspacePath, "ToPNGConvert")
 shutil.copy(os.path.join(initialWD, "Libraries", "Custom", "convertPNG.bat"), workspacePath)
 
-# Create references to these folders.
-convertFolder = os.path.join(workspacePath, "Convert")
-outDDSLosslessFolder = os.path.join(workspacePath, "OutDDS_Lossless")
-transparencyFixFolder = os.path.join(workspacePath, "TransparencyFix")
 
 
 # File utilities
@@ -57,7 +57,7 @@ def getFilenameFromPath(path: str):
 
 
 # Construct the model texture pair list.
-print("Creating list of SBFRES paths to extract...")
+print("Creating reference list of SBFRES paths to extract...")
 
 # Returns a boolean of whether this file should be added to the filename list.
 invalidFileEndings = [".Tex2.sbfres", "_Animation.sbfres", "_L.sbfres", "_L.Tex1.sbfres", "_L.Tex2.sbfres"]
@@ -82,7 +82,7 @@ class ModelTextureSBFRESPair:
             self.texturePath = ""
 
         # Output that this was created.
-        print("Created model " + self.itemName + " with model path " + self.modelPath + " and texture path " + self.texturePath)
+        print("New model reference: " + self.itemName + " with model path " + self.modelPath + " and texture path " + self.texturePath)
 
 # This list contains the entire database of SBFRES pairs.
 mtPairList = list()
@@ -116,48 +116,6 @@ def call(item: str, args: list):
     subprocess.Popen(item + argsString, shell=True, stdout=subprocess.PIPE).stdout.read()
 
 
-# Shortcut based on a previously created file to the model currently pending extraction.
-
-# Used to get rid of the already extracted models.
-sbfresStateFile = os.path.join(databasePath, ".sbfres_state")
-
-# Check whether exporting has already started (using provided file)
-def checkSbfresStateFile():
-    if os.path.exists(sbfresStateFile):
-        openedFile = open(sbfresStateFile, "r")
-        pendingModel = openedFile.read()
-        openedFile.close()
-        if pendingModel != "":
-            print("Opened file is " + pendingModel)
-            #Can't remove objects from list while iterating so have to iterate over copy.
-            for modelTexturePair in mtPairList[:]:
-                if modelTexturePair.itemName != pendingModel:
-                    mtPairList.remove(modelTexturePair)
-                    print("Skipping " + modelTexturePair.itemName)
-                else:
-                    print("Saw same")
-                    openedFile.close()
-                    return
-        else:
-            print("No sbfres state detected, beginning new.  ")
-        openedFile.close()
-
-checkSbfresStateFile()
-
-
-
-# Used to add files to the database.
-def addToDatabase(toAddFilePath: str):
-    toAddFilename = os.path.basename(toAddFilePath)
-    try:
-        shutil.move(toAddFilePath, databasePath)
-        print("Added " + toAddFilename + " to the database successfully!")
-    except FileExistsError:
-        os.remove(toAddFilePath)
-        print("Didnt' add " + toAddFilename + " because it already is part of the database.")
-    except:
-        os.remove(toAddFilePath)
-        print("A weird error occurred upon attempting to add " + toAddFilename + " to the database!")
 
 # Extracting given files.
 def extractSBFREStoRARC(sbfresPath: str):
@@ -183,80 +141,120 @@ def addSBFRESToWorkspaceAndExtract(sbfresPath: str):
     # SBFRES to BFRES to database.
     return extractSBFREStoRARC(sbfresFilePath)
 
-# Extract every file from the pair list database.
 
+# Check whether the database is empty and ask whether it should be emptied.
+if len(os.listdir(databasePath)) > 0:
+    if input("Files exist in the database currently, remove them? (y/n): ")[0] == "y":
+        emptyFolder(databasePath)
+
+
+# Extract every file from the pair list database: the grunt work
 for currentModelTexturePair in mtPairList:
     # Output to the user what we are currently extracting and update the sbfresState pending model.
     print("Currently extracting " + currentModelTexturePair.itemName)
 
-    # Calling open should create it if it doesn't exist.
-    openedStateFile = open(sbfresStateFile, "w")
-    openedStateFile.truncate(0) # Erase the file.
-    openedStateFile.write(currentModelTexturePair.itemName) # Write the name of the current item.
-    openedStateFile.close() # you HAVE to close the file or it won't work.
+    # Create the boolean which will keep track of something going wrong during this process.
+    somethingWentWrong = False
 
-    # Model extraction
-    if currentModelTexturePair.modelPath != "":
-        rarcFilePath = addSBFRESToWorkspaceAndExtract(currentModelTexturePair.modelPath)
-        #Rename to BFRES
-        bfresFilePath = shutil.move(rarcFilePath, os.path.join(os.path.dirname(rarcFilePath), getFilenameFromPath(rarcFilePath) + ".bfres"))
-        #Add to database.
-        addToDatabase(bfresFilePath)
+    # Verify that this item has not already been extracted.
+    completedDatabaseSubdirectory = os.path.join(databasePath, currentModelTexturePair.itemName)
+    if os.path.exists(completedDatabaseSubdirectory):
+        print("Looks like " + currentModelTexturePair.itemName + " has already been exported successfully, skipping.")
+        continue
 
-    # Texture extraction
-    if currentModelTexturePair.texturePath != "":
-        rarcFilePath = addSBFRESToWorkspaceAndExtract(currentModelTexturePair.texturePath)
-        # Rename the file to texturefile.rarc.
-        texturefile = shutil.move(rarcFilePath, "texturefile.rarc")
+    # Create the pending directory.
+    pendingDatabaseSubdirectory = completedDatabaseSubdirectory + " (Pending)"
+    print("Creating subdirectory " + pendingDatabaseSubdirectory + " for " + currentModelTexturePair.itemName)
+    if os.path.exists(pendingDatabaseSubdirectory):
+        print("Deleted previous pending subdirectory.")
+        shutil.rmtree(pendingDatabaseSubdirectory)
+    os.makedirs(pendingDatabaseSubdirectory)
 
-        # Extract GTX files with QuickBMS and script made by RTB.
-        call(os.path.join("Libraries", "quickbms", "quickbms.exe"), [os.path.join("Libraries", "WiiU_BFREStoGTX", "BFRES_Textures_NoMips_BotWTex1Only.bms"), texturefile, workspacePath])
-        extractDirectory = os.path.join(workspacePath, "texturefile")
+    # Remove the something went wrong directory if it exists.
+    somethingWentWrongSubdirectory = completedDatabaseSubdirectory + " (Error)"
+    if os.path.exists(somethingWentWrongSubdirectory):
+        shutil.rmtree(somethingWentWrongSubdirectory)
+        print("Removed Error directory for " + currentModelTexturePair.itemName)
 
-        # Remove the texture file.
-        os.remove(texturefile)
+    # One massive try statement in case things go wrong.
+    try:
 
-        # Verify that the QuickBMS script created a new folder with the textures.
-        if not os.path.exists(extractDirectory):
-            print("No textures were extracted from " + currentModelTexturePair.itemName + "!")
-            continue
+        # Model extraction
+        if currentModelTexturePair.modelPath != "":
+            # Extract the SBFRES file.
+            rarcFilePath = addSBFRESToWorkspaceAndExtract(currentModelTexturePair.modelPath)
 
-        # Move the GTX files to the Convert directory and delete the texture folder.
-        for file in os.listdir(extractDirectory):
-            shutil.move(os.path.join(extractDirectory, file), convertFolder)
-        shutil.rmtree(extractDirectory) # created by the extract script.
+            #Rename to BFRES
+            bfresFilePath = shutil.move(rarcFilePath, os.path.join(os.path.dirname(rarcFilePath), getFilenameFromPath(rarcFilePath) + ".bfres"))
+            #Add to database.
+            shutil.move(bfresFilePath, pendingDatabaseSubdirectory)
+            print("Added model of " + currentModelTexturePair.itemName + " to database successfully!")
 
-        # Convert these GTX files to DDS files.
-        os.chdir(workspacePath)
-        call(os.path.join(workspacePath, "convertGTX.bat"), [])
-        os.chdir(initialWD)
+        # Texture extraction
+        if currentModelTexturePair.texturePath != "":
+            # Extract the file.
+            rarcFilePath = addSBFRESToWorkspaceAndExtract(currentModelTexturePair.texturePath)
 
-        # Clean out the Convert and OutDDS folders.
-        emptyFolder(os.path.join(workspacePath, "OutDDS"))
-        emptyFolder(os.path.join(workspacePath, "Convert"))
+            # Rename the file to texturefile.rarc.
+            texturefile = shutil.move(rarcFilePath, "texturefile.rarc")
 
-        # Apply the transparency fix to these DDS files.
-        call(os.path.join("Libraries", "quickbms", "quickbms.exe"), [os.path.join("Libraries", "BFLIMDDS", "BFLIMDDSFix.bms"), os.path.join(outDDSLosslessFolder, "*.dds"), transparencyFixFolder])
+            # Extract GTX files with QuickBMS and script made by RTB.
+            call(os.path.join(initialWD, "Libraries", "quickbms", "quickbms.exe"), [os.path.join(initialWD, "Libraries", "WiiU_BFREStoGTX", "BFRES_Textures_NoMips_BotWTex1Only.bms"), texturefile, workspacePath])
+            extractDirectory = os.path.join(workspacePath, "texturefile")
 
-        # Convert all created DDS files to PNG.
-        pngConvertFolder = os.path.join(workspacePath, "ToPNGConvert")
-        for fixedFile in os.listdir(transparencyFixFolder):
-            shutil.move(os.path.join(transparencyFixFolder, fixedFile), pngConvertFolder)
+            # Remove the texture file.
+            os.remove(texturefile)
 
-        # Call the PNG conversion BAT file (for some reason the arguments aren't working as expected :P)
-        os.chdir(workspacePath)
-        call("convertPNG.bat", [])
-        os.chdir(initialWD)
+            # Verify that the QuickBMS script created a new folder with the textures.
+            if not os.path.exists(extractDirectory):
+                print("No textures were extracted from " + currentModelTexturePair.itemName + "!")
+                continue
 
-        # Move all PNG files over to the database.
-        for pngFile in os.listdir(pngConvertFolder):
-            if pngFile.endswith(".png"):
-                addToDatabase(os.path.join(pngConvertFolder, pngFile))
+            # Move the GTX files to the Convert directory and delete the texture folder.
+            for file in os.listdir(extractDirectory):
+                shutil.move(os.path.join(extractDirectory, file), convertFolder)
+            shutil.rmtree(extractDirectory) # created by the extract script.
 
-        # Empty each folder.
-        emptyFolder(transparencyFixFolder)
-        emptyFolder(outDDSLosslessFolder)
-        emptyFolder(pngConvertFolder)
+            # Convert these GTX files to DDS files.
+            os.chdir(workspacePath)
+            call(os.path.join(workspacePath, "convertGTX.bat"), [])
+            os.chdir(initialWD)
+
+            # Apply the transparency fix to these DDS files.
+            call(os.path.join(initialWD, "Libraries", "quickbms", "quickbms.exe"), [os.path.join(initialWD, "Libraries", "BFLIMDDS", "BFLIMDDSFix.bms"), os.path.join(outDDSLosslessFolder, "*.dds"), transparencyFixFolder])
+
+            # Convert all created DDS files to PNG.
+            for fixedFile in os.listdir(transparencyFixFolder):
+                shutil.move(os.path.join(transparencyFixFolder, fixedFile), pngConvertFolder)
+
+            # Call the PNG conversion BAT file (for some reason the arguments aren't working as expected :P)
+            os.chdir(workspacePath)
+            call("convertPNG.bat", [])
+            os.chdir(initialWD)
+
+            # Move all PNG files over to the database.
+            for pngFile in os.listdir(pngConvertFolder):
+                if pngFile.endswith(".png"):
+                    shutil.move(os.path.join(pngConvertFolder, pngFile), pendingDatabaseSubdirectory)
+                    print("Moved " + pngFile + " to subdirectory in database successfully!")
+
+    except Exception as err:
+        print("Something went wrong during extraction of " + currentModelTexturePair.itemName + "!")
+        traceback.print_exc()
+        somethingWentWrong = True
+
+    # Rename the pending database to the completed database so that the script knows what to skip.
+    if not somethingWentWrong:
+        os.rename(pendingDatabaseSubdirectory, completedDatabaseSubdirectory)
+    else:
+        os.rename(pendingDatabaseSubdirectory, completedDatabaseSubdirectory + " (Error!)")
+
+    # Clean out the folders for the next run.
+    emptyFolder(os.path.join(workspacePath, "OutDDS"))
+    emptyFolder(os.path.join(workspacePath, "Convert"))
+    emptyFolder(transparencyFixFolder)
+    emptyFolder(outDDSLosslessFolder)
+    emptyFolder(pngConvertFolder)
 
 
 print("Added all files to the database successfully :)")
