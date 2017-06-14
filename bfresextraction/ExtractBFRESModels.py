@@ -181,17 +181,20 @@ for currentModelTexturePair in mtPairList:
 
         # Model extraction
         if currentModelTexturePair.modelPath != "":
+            print("Extracting model")
             # Extract the SBFRES file.
             rarcFilePath = addSBFRESToWorkspaceAndExtract(currentModelTexturePair.modelPath)
 
             #Rename to BFRES
             bfresFilePath = shutil.move(rarcFilePath, os.path.join(os.path.dirname(rarcFilePath), getFilenameFromPath(rarcFilePath) + ".bfres"))
+
             #Add to database.
             shutil.move(bfresFilePath, pendingDatabaseSubdirectory)
             print("Added model of " + currentModelTexturePair.itemName + " to database successfully!")
 
         # Texture extraction
         if currentModelTexturePair.texturePath != "":
+            print("Extracting texture")
             # Extract the file.
             rarcFilePath = addSBFRESToWorkspaceAndExtract(currentModelTexturePair.texturePath)
 
@@ -199,13 +202,13 @@ for currentModelTexturePair in mtPairList:
             texturefile = shutil.move(rarcFilePath, os.path.join(os.path.dirname(rarcFilePath), "texturefile.rarc"))
 
             # Extract GTX files with QuickBMS and script made by RTB.
-            call(os.path.join(initialWD, "Libraries", "quickbms", "quickbms.exe"), [os.path.join(initialWD, "Libraries", "WiiU_BFREStoGTX", "BFRES_Textures_NoMips_BotWTex1Only.bms"), texturefile, workspacePath])
-            extractDirectory = os.path.join(workspacePath, "texturefile")
+            call(os.path.join(initialWD, "Libraries", "quickbms", "quickbms.exe"), ["-K", os.path.join(initialWD, "Libraries", "WiiU_BFREStoGTX", "BFRES_Textures_NoMips_BotWTex1Only.bms"), texturefile, workspacePath])
 
             # Remove the texture file.
             os.remove(texturefile)
 
             # Verify that the QuickBMS script created a new folder with the textures.
+            extractDirectory = os.path.join(workspacePath, "texturefile")
             if not os.path.exists(extractDirectory):
                 print("No textures were extracted from " + currentModelTexturePair.itemName + "!")
                 continue
@@ -221,7 +224,7 @@ for currentModelTexturePair in mtPairList:
             os.chdir(initialWD)
 
             # Apply the transparency fix to these DDS files.
-            call(os.path.join(initialWD, "Libraries", "quickbms", "quickbms.exe"), [os.path.join(initialWD, "Libraries", "BFLIMDDS", "BFLIMDDSFix.bms"), os.path.join(outDDSLosslessFolder, "*.dds"), transparencyFixFolder])
+            call(os.path.join(initialWD, "Libraries", "quickbms", "quickbms.exe"), ["-K", os.path.join(initialWD, "Libraries", "BFLIMDDS", "BFLIMDDSFix.bms"), os.path.join(outDDSLosslessFolder, "*.dds"), transparencyFixFolder])
 
             # Convert all created DDS files to PNG.
             for fixedFile in os.listdir(transparencyFixFolder):
