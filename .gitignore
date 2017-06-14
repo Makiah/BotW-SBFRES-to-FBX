@@ -52,4 +52,4 @@ fabric.properties
 bfresextraction/BFRESDatabase/*
 bfresextraction/ExtractionWorkspace/*
 fbxextraction/FBXDatabase/*
-fbxextraction/__ModelLoadingWorkspace/*
+fbxextraction/___ModelLoadingWorkspace/*
