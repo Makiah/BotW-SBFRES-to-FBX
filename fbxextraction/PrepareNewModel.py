@@ -10,7 +10,9 @@ def emptyFolder(folderPath):
         for d in dirs:
             shutil.rmtree(os.path.join(root, d))
 
+# Write to moretoload.txt.
 def openAndWriteToMoreToLoad(thingToWrite: str):
+    # will create if not already existent.
     moreToLoad = open(os.path.join(os.getcwd(), "__ModelLoadingWorkspace", "moretoload.txt"), "w")
     moreToLoad.write(thingToWrite)
     moreToLoad.close()

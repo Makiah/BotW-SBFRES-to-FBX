@@ -24,7 +24,7 @@ workspacePath = os.path.join(initialWD, "ExtractionWorkspace")
 emptyFolder(os.path.join(initialWD, "ExtractionWorkspace"))
 
 # Set up database reference.
-databasePath = os.path.join(initialWD, "ExtractionDatabase")
+databasePath = os.path.join(initialWD, "BFRESDatabase")
 
 
 # GTX to DDS conversion libraries.
