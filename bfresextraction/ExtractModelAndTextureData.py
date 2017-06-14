@@ -3,6 +3,8 @@ import os
 import subprocess
 import shutil
 import traceback
+# Import from a different folder.
+from customUtilities import CustomFileUtils
 
 # Will vary based on other people's set /ps.
 sbfresCompilation = "Z:\Desktop\BOTW\SBFRES Compilation"
@@ -11,21 +13,18 @@ sbfresCompilation = "Z:\Desktop\BOTW\SBFRES Compilation"
 initialWD = os.getcwd()
 
 
-# Used to empty folders (but not the folder itself)
-def emptyFolder(folderPath):
-    for root, dirs, files in os.walk(folderPath):
-        for f in files:
-            os.unlink(os.path.join(root, f)) # the EXACT same thing as os.remove :P
-        for d in dirs:
-            shutil.rmtree(os.path.join(root, d))
-
-# Register and empty workspace.
-workspacePath = os.path.join(initialWD, "ExtractionWorkspace")
-emptyFolder(os.path.join(initialWD, "ExtractionWorkspace"))
-
 # Set up database reference.
-databasePath = os.path.join(initialWD, "BFRESDatabase")
+databasePath = os.path.join(initialWD, "Database")
+# Ask if we should start from scratch.
+if len(os.listdir(databasePath)) > 0:
+    if input("Files exist in the database currently, remove them? (y/n): ")[0] == "y":
+        CustomFileUtils.emptyFolder(databasePath)
 
+
+
+# Register and set up workspace.
+workspacePath = os.path.join(initialWD, "Workspace")
+CustomFileUtils.emptyFolder(workspacePath)
 
 # GTX to DDS conversion libraries.
 os.makedirs(os.path.join(workspacePath,"OutDDS_Lossless"))
@@ -47,6 +46,7 @@ shutil.copy(os.path.join(texConv2Library, "TexConv2.exe"), workspacePath)
 os.makedirs(os.path.join(workspacePath, "ToPNGConvert"))
 pngConvertFolder = os.path.join(workspacePath, "ToPNGConvert")
 shutil.copy(os.path.join(initialWD, "Libraries", "Custom", "convertPNG.bat"), workspacePath)
+
 
 
 
@@ -140,12 +140,6 @@ def addSBFRESToWorkspaceAndExtract(sbfresPath: str):
     sbfresFilePath = shutil.copy(sbfresPath, workspacePath)
     # SBFRES to BFRES to database.
     return extractSBFREStoRARC(sbfresFilePath)
-
-
-# Check whether the database is empty and ask whether it should be emptied.
-if len(os.listdir(databasePath)) > 0:
-    if input("Files exist in the database currently, remove them? (y/n): ")[0] == "y":
-        emptyFolder(databasePath)
 
 
 # Extract every file from the pair list database: the grunt work
@@ -253,11 +247,11 @@ for currentModelTexturePair in mtPairList:
         os.rename(pendingDatabaseSubdirectory, completedDatabaseSubdirectory + " (Error!)")
 
     # Clean out the folders for the next run.
-    emptyFolder(os.path.join(workspacePath, "OutDDS"))
-    emptyFolder(os.path.join(workspacePath, "Convert"))
-    emptyFolder(transparencyFixFolder)
-    emptyFolder(outDDSLosslessFolder)
-    emptyFolder(pngConvertFolder)
+    CustomFileUtils.emptyFolder(os.path.join(workspacePath, "OutDDS"))
+    CustomFileUtils.emptyFolder(os.path.join(workspacePath, "Convert"))
+    CustomFileUtils.emptyFolder(transparencyFixFolder)
+    CustomFileUtils.emptyFolder(outDDSLosslessFolder)
+    CustomFileUtils.emptyFolder(pngConvertFolder)
 
 
 print("Added all files to the database successfully :)")
