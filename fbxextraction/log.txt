@@ -1,0 +1,126 @@
+Reset true file
+Removed bass_alb.0.png from workspace!
+Removed bass_alb.1.png from workspace!
+Removed bass_alb.2.png from workspace!
+Removed bass_eye_alb.png from workspace!
+Removed bass_eye_nrm.png from workspace!
+Removed bass_eye_spm.png from workspace!
+Removed bass_nrm.png from workspace!
+Removed bass_spm.png from workspace!
+Removed _Animal_Bass.bfres from workspace!
+Checking for C:\Users\makiah\Desktop\BOTWModelExtractionV2\fbxextraction\FBXDatabase\Animal_Bass.fbx
+Doesn't exist!  Exporting now.  
+Added Animal_Bass.bfres to the workspace!
+Added bass_alb.0.png to the workspace!
+Added bass_alb.1.png to the workspace!
+Added bass_alb.2.png to the workspace!
+Added bass_eye_alb.png to the workspace!
+Added bass_eye_nrm.png to the workspace!
+Added bass_eye_spm.png to the workspace!
+Added bass_nrm.png to the workspace!
+Added bass_spm.png to the workspace!
+Reset true file
+Removed bass_alb.0.png from workspace!
+Removed bass_alb.1.png from workspace!
+Removed bass_alb.2.png from workspace!
+Removed bass_eye_alb.png from workspace!
+Removed bass_eye_nrm.png from workspace!
+Removed bass_eye_spm.png from workspace!
+Removed bass_nrm.png from workspace!
+Removed bass_spm.png from workspace!
+Removed _Animal_Bass.bfres from workspace!
+Checking for C:\Users\makiah\Desktop\BOTWModelExtractionV2\fbxextraction\FBXDatabase\Animal_Bass.fbx
+Doesn't exist!  Exporting now.  
+Added Animal_Bass.bfres to the workspace!
+Added bass_alb.0.png to the workspace!
+Added bass_alb.1.png to the workspace!
+Added bass_alb.2.png to the workspace!
+Added bass_eye_alb.png to the workspace!
+Added bass_eye_nrm.png to the workspace!
+Added bass_eye_spm.png to the workspace!
+Added bass_nrm.png to the workspace!
+Added bass_spm.png to the workspace!
+Reset true file
+Removed bass_alb.0.png from workspace!
+Removed bass_alb.1.png from workspace!
+Removed bass_alb.2.png from workspace!
+Removed bass_eye_alb.png from workspace!
+Removed bass_eye_nrm.png from workspace!
+Removed bass_eye_spm.png from workspace!
+Removed bass_nrm.png from workspace!
+Removed bass_spm.png from workspace!
+Removed _Animal_Bass.bfres from workspace!
+Checking for C:\Users\makiah\Desktop\BOTWModelExtractionV2\fbxextraction\FBXDatabase\Animal_Bass.fbx
+Doesn't exist!  Exporting now.  
+Added Animal_Bass.bfres to the workspace!
+Added bass_alb.0.png to the workspace!
+Added bass_alb.1.png to the workspace!
+Added bass_alb.2.png to the workspace!
+Added bass_eye_alb.png to the workspace!
+Added bass_eye_nrm.png to the workspace!
+Added bass_eye_spm.png to the workspace!
+Added bass_nrm.png to the workspace!
+Added bass_spm.png to the workspace!
+Reset true file
+Removed bass_alb.0.png from workspace!
+Removed bass_alb.1.png from workspace!
+Removed bass_alb.2.png from workspace!
+Removed bass_eye_alb.png from workspace!
+Removed bass_eye_nrm.png from workspace!
+Removed bass_eye_spm.png from workspace!
+Removed bass_nrm.png from workspace!
+Removed bass_spm.png from workspace!
+Removed _Animal_Bass.bfres from workspace!
+Checking for C:\Users\makiah\Desktop\BOTWModelExtractionV2\fbxextraction\FBXDatabase\Animal_Bass.fbx
+Doesn't exist!  Exporting now.  
+Added Animal_Bass.bfres to the workspace!
+Added bass_alb.0.png to the workspace!
+Added bass_alb.1.png to the workspace!
+Added bass_alb.2.png to the workspace!
+Added bass_eye_alb.png to the workspace!
+Added bass_eye_nrm.png to the workspace!
+Added bass_eye_spm.png to the workspace!
+Added bass_nrm.png to the workspace!
+Added bass_spm.png to the workspace!
+Reset true file
+Removed bass_alb.0.png from workspace!
+Removed bass_alb.1.png from workspace!
+Removed bass_alb.2.png from workspace!
+Removed bass_eye_alb.png from workspace!
+Removed bass_eye_nrm.png from workspace!
+Removed bass_eye_spm.png from workspace!
+Removed bass_nrm.png from workspace!
+Removed bass_spm.png from workspace!
+Removed _Animal_Bass.bfres from workspace!
+Checking for C:\Users\makiah\Desktop\BOTWModelExtractionV2\fbxextraction\FBXDatabase\Animal_Bass.fbx
+Doesn't exist!  Exporting now.  
+Added Animal_Bass.bfres to the workspace!
+Added bass_alb.0.png to the workspace!
+Added bass_alb.1.png to the workspace!
+Added bass_alb.2.png to the workspace!
+Added bass_eye_alb.png to the workspace!
+Added bass_eye_nrm.png to the workspace!
+Added bass_eye_spm.png to the workspace!
+Added bass_nrm.png to the workspace!
+Added bass_spm.png to the workspace!
+Reset true file
+Removed bass_alb.0.png from workspace!
+Removed bass_alb.1.png from workspace!
+Removed bass_alb.2.png from workspace!
+Removed bass_eye_alb.png from workspace!
+Removed bass_eye_nrm.png from workspace!
+Removed bass_eye_spm.png from workspace!
+Removed bass_nrm.png from workspace!
+Removed bass_spm.png from workspace!
+Removed _Animal_Bass.bfres from workspace!
+Checking for C:\Users\makiah\Desktop\BOTWModelExtractionV2\fbxextraction\FBXDatabase\Animal_Bass.fbx
+Doesn't exist!  Exporting now.  
+Added Animal_Bass.bfres to the workspace!
+Added bass_alb.0.png to the workspace!
+Added bass_alb.1.png to the workspace!
+Added bass_alb.2.png to the workspace!
+Added bass_eye_alb.png to the workspace!
+Added bass_eye_nrm.png to the workspace!
+Added bass_eye_spm.png to the workspace!
+Added bass_nrm.png to the workspace!
+Added bass_spm.png to the workspace!
