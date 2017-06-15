@@ -11,8 +11,8 @@
 -- Added type 522 for colours (signed bytes, e.g. Fire Peach's dress model in SM3DW).
 
 
--- Modified by Makiah to automatically export all possible models to some location while working with a Python script.  
-
+-- Modified by Makiah to automatically export all models to some location while working in cohesion with a Python script.
+messagebox "Beginning modified BFRES Importer :)"
 
 
 fn readBEshort fstream = (bit.swapBytes (readshort fstream #unsigned) 1 2)
@@ -3123,4 +3123,9 @@ Print ("Done! ("+((((timestamp())-st)*0.001)as string)+" Seconds)")
 )
 )
 
+
 CreateDialog BFRESImporter
+
+
+-- Exit 3DSMax.
+quitMax #noprompt

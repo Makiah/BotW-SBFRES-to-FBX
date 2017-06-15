@@ -7,3 +7,9 @@ def emptyFolder(folderPath):
             os.unlink(os.path.join(root, f)) # the EXACT same thing as os.remove :P
         for d in dirs:
             shutil.rmtree(os.path.join(root, d))
+
+
+# File utilities
+def getFilenameFromPath(path: str):
+    name = os.path.basename(path)
+    return name[0:name.index(".")]

@@ -1,13 +1,7 @@
 # Import required libraries.
 import os
 import shutil
-from customUtilities import SimulateKeyboard, SimulateMouse, CustomFileUtils
-
-# Testing.
-SimulateMouse.click(3, 797)
-SimulateKeyboard.typePhrase("hi there!")
-SimulateMouse.click(0, 500)
-exit(0)
+from customUtilities import CustomFileUtils, CommandLineUtils
 
 # Create required references (since we are executed from a different location)
 fbxExtractionPath = os.getcwd()
@@ -23,10 +17,7 @@ if not os.path.exists(modelLoadingWorkspace):
 print("Reset true file")
 
 # Delete previously existing BFRES and PNG files from the workspace.
-for previousWorkspaceFile in os.listdir(modelLoadingWorkspace):
-    if previousWorkspaceFile.endswith(".png") or previousWorkspaceFile.endswith(".bfres"):
-        os.remove(os.path.join(modelLoadingWorkspace, previousWorkspaceFile))
-        print("Removed " + previousWorkspaceFile + " from workspace!")
+CustomFileUtils.emptyFolder(modelLoadingWorkspace)
 
 # Define the directories which have models to extract.
 for root, dirs, files in os.walk(bfresDatabase):
@@ -49,8 +40,11 @@ for root, dirs, files in os.walk(bfresDatabase):
                 if bfresOrTextureFile.endswith(".bfres"):
                     shutil.move(os.path.join(modelLoadingWorkspace, bfresOrTextureFile), os.path.join(modelLoadingWorkspace, "_" + bfresOrTextureFile))
 
-            # Begin the mouse clicking simulation.
-            
+
+            # Open 3DSMax and open the launch script file.
+            CommandLineUtils.call(CommandLineUtils.quoted("C:\\Program Files\\Autodesk\\3ds Max 2015\\3dsmax.exe"), ["-q", "-U", "MAXScript", os.path.join(fbxExtractionPath, "Libraries", "WiiU_BFRESImporter", "BFRES to FBX.ms")])
+
+            input("Got back control")
 
         else:
             print(expectedFBX + " already exists!  Skipping.")

@@ -4,7 +4,7 @@ import subprocess
 import shutil
 import traceback
 # Import from a different folder.
-from customUtilities import CustomFileUtils
+from customUtilities import CustomFileUtils, CommandLineUtils
 
 # Will vary based on other people's set /ps.
 sbfresCompilation = "Z:\Desktop\BOTW\SBFRES Compilation"
@@ -48,14 +48,6 @@ pngConvertFolder = os.path.join(workspacePath, "ToPNGConvert")
 shutil.copy(os.path.join(initialWD, "Libraries", "Custom", "convertPNG.bat"), workspacePath)
 
 
-
-
-# File utilities
-def getFilenameFromPath(path: str):
-    name = os.path.basename(path)
-    return name[0:name.index(".")]
-
-
 # Construct the model texture pair list.
 print("Creating reference list of SBFRES paths to extract...")
 
@@ -95,32 +87,15 @@ for sbfresFile in sorted(os.listdir(sbfresCompilation)):
         # If this file has a distinct filename from the last filename.
         currentFilename = sbfresFile[0:sbfresFile.index(".")]
         if lastFilename != currentFilename:
-            mtPairList.append(ModelTextureSBFRESPair(getFilenameFromPath(sbfresFile)))
+            mtPairList.append(ModelTextureSBFRESPair(CustomFileUtils.getFilenameFromPath(sbfresFile)))
             lastFilename = currentFilename
-
-
-
-
-# Used for command line arguments.
-def quoted(string: str):
-    quote = "\""
-    return quote + string + quote
-
-# Utility method to call something via command prompt.
-def call(item: str, args: list):
-    argsString = ""
-    for arg in args:
-        argsString += " " + quoted(arg)
-
-    # DO NOT REMOVE stdout.read() BELOW
-    subprocess.Popen(item + argsString, shell=True, stdout=subprocess.PIPE).stdout.read()
 
 
 
 # Extracting given files.
 def extractSBFREStoRARC(sbfresPath: str):
     # Extract SBFRES with yaz0dec.
-    call(quoted(os.path.join(initialWD, "Libraries", "szstools", "yaz0dec.exe")), [sbfresPath])
+    CommandLineUtils.call(CommandLineUtils.quoted(os.path.join(initialWD, "Libraries", "szstools", "yaz0dec.exe")), [sbfresPath])
 
     # Delete original SBFRES.
     os.remove(sbfresPath)
@@ -180,7 +155,7 @@ for currentModelTexturePair in mtPairList:
             rarcFilePath = addSBFRESToWorkspaceAndExtract(currentModelTexturePair.modelPath)
 
             #Rename to BFRES
-            bfresFilePath = shutil.move(rarcFilePath, os.path.join(os.path.dirname(rarcFilePath), getFilenameFromPath(rarcFilePath) + ".bfres"))
+            bfresFilePath = shutil.move(rarcFilePath, os.path.join(os.path.dirname(rarcFilePath), CustomFileUtils.getFilenameFromPath(rarcFilePath) + ".bfres"))
 
             #Add to database.
             shutil.move(bfresFilePath, pendingDatabaseSubdirectory)
@@ -196,7 +171,7 @@ for currentModelTexturePair in mtPairList:
             texturefile = shutil.move(rarcFilePath, os.path.join(os.path.dirname(rarcFilePath), "texturefile.rarc"))
 
             # Extract GTX files with QuickBMS and script made by RTB.
-            call(os.path.join(initialWD, "Libraries", "quickbms", "quickbms.exe"), ["-K", os.path.join(initialWD, "Libraries", "WiiU_BFREStoGTX", "BFRES_Textures_NoMips_BotWTex1Only.bms"), texturefile, workspacePath])
+            CommandLineUtils.call(os.path.join(initialWD, "Libraries", "quickbms", "quickbms.exe"), ["-K", os.path.join(initialWD, "Libraries", "WiiU_BFREStoGTX", "BFRES_Textures_NoMips_BotWTex1Only.bms"), texturefile, workspacePath])
 
             # Remove the texture file.
             os.remove(texturefile)
@@ -214,11 +189,11 @@ for currentModelTexturePair in mtPairList:
 
             # Convert these GTX files to DDS files.
             os.chdir(workspacePath)
-            call(os.path.join(workspacePath, "convertGTX.bat"), [])
+            CommandLineUtils.call(os.path.join(workspacePath, "convertGTX.bat"), [])
             os.chdir(initialWD)
 
             # Apply the transparency fix to these DDS files.
-            call(os.path.join(initialWD, "Libraries", "quickbms", "quickbms.exe"), ["-K", os.path.join(initialWD, "Libraries", "BFLIMDDS", "BFLIMDDSFix.bms"), os.path.join(outDDSLosslessFolder, "*.dds"), transparencyFixFolder])
+            CommandLineUtils.call(os.path.join(initialWD, "Libraries", "quickbms", "quickbms.exe"), ["-K", os.path.join(initialWD, "Libraries", "BFLIMDDS", "BFLIMDDSFix.bms"), os.path.join(outDDSLosslessFolder, "*.dds"), transparencyFixFolder])
 
             # Convert all created DDS files to PNG.
             for fixedFile in os.listdir(transparencyFixFolder):
@@ -226,7 +201,7 @@ for currentModelTexturePair in mtPairList:
 
             # Call the PNG conversion BAT file (for some reason the arguments aren't working as expected :P)
             os.chdir(workspacePath)
-            call("convertPNG.bat", [])
+            CommandLineUtils.call("convertPNG.bat", [])
             os.chdir(initialWD)
 
             # Move all PNG files over to the database.
