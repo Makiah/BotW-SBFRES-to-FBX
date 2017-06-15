@@ -136,12 +136,10 @@ if fname != undefined do
 		fseek f fmdl_info.fnameOff#seek_set
 		FMDLName = ReadString f
 		append FMDLName_array FMDLName
-		messagebox ("Added " + FMDLName_array[mdl] as string + " to array")
 		fseek f NextFMDL#seek_set
 	)
 )
 --End loading section?
-messagebox "Ended model population."
 
 --string crash = "sucka"
 
@@ -149,7 +147,6 @@ messagebox "Ended model population."
 -- Once the user would press "Load BFMDL"
 --on btnImport pressed do
 -- This is where we use a gross for loop in which we tell the script that the user set the dropdown to all models, and then export each one.  
-messagebox ("About to start for loop with" + (FMDLName_array.count as string) + " iterations  (fingers crossed!)")
 For currentExtractedModelIndex = 1 to FMDLName_array.count do
 (
 	messagebox ("Doing model " + (currentExtractedModelIndex as string) + " of " + (FMDLName_array.count as string))
@@ -3118,12 +3115,32 @@ For currentExtractedModelIndex = 1 to FMDLName_array.count do
 		)
 
 		clearSelection()
-
-		-- Output that this was completed.  
-		messagebox ("Done! ("+((((timestamp())-st)*0.001)as string)+" Seconds)")
-
+		
+		-- Model complete!
 	)
-)
+	
+	-- Now export the entire scene after fixing the rotation (this is where things get tough).  
+	toSelect = #()
+	-- Find just the objects with no parent and rotate them.  
+	for potentialSelectable in objects do
+	(
+		if potentialSelectable.parent == undefined do 
+		(
+			append toSelect potentialSelectable
+		)
+	)
+	select toSelect
+	
+	-- Rotate all objects 90 degrees around the X axis.  
+	rotate selection 90 [1,0,0]
+	
+	-- Export everything to an FBX file!
+	newFBXPath = ("C:\\Users\makiah\\Desktop\\BOTWModelExtractionV2\\fbxextraction\\Workspace\\" + FMDLName_array[currentExtractedModelIndex] + ".fbx")
+	exportfile newFBXPath #noPrompt selectedOnly:false
+	
+	resetmaxfile #noprompt
+	
+) -- End of for loop.  
 
 
 -- Exit 3DSMax.
