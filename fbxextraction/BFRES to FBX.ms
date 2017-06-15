@@ -1,4 +1,6 @@
--- Importer for Wii U BFRES Files seen in many Nintendo games. 
+USER_WORKSPACE_PATH = "C:\Users\makiah\Desktop\BOTWModelExtractionV2\fbxextraction\Workspace" 
+
+-- Importer for Wii U BFRES Files seen in many Nintendo games.
 -- Written by ItsEasyActually and Random Talking Bush (with some help from Ploaj).
 -- Credit to the tockdom wiki community for the format documention
 -- Special thanks to TGE for help early on with new scripting methods and getting ItsEasyActually started
@@ -64,11 +66,8 @@ FMDLOffset_array = #()
 f = #()
 p = #()
 
--- The initial stage where the user loads the file, and Max populates the dropdown.  
---on btnLoad pressed do(
---clearlistener()s
-fname = "C:\\Users\\makiah\\Desktop\\BOTWModelExtractionV2\\fbxextraction\\Workspace\\model.bfres" --GetOpenFileName caption:"Open BFRES" types:"BFRES File(*.bfres)|*.bfres"
---fname = GetOpenFileName caption:"Open BFRES" types:"BFRES File(*.bfres)|*.bfres"
+-- The initial stage where the user loads the file, and Max populates the dropdown.
+fname = (USER_WORKSPACE_PATH + "model.bfres")
 st = timestamp() --get start time in milliseconds
 
 -- Moved
@@ -137,8 +136,6 @@ if fname != undefined do
 	)
 )
 --End loading section?
-
---string crash = "sucka"
 
 
 -- Once the user would press "Load BFMDL"
@@ -3130,7 +3127,7 @@ For currentExtractedModelIndex = 1 to FMDLName_array.count do
 	rotate selection 90 [1,0,0]
 	
 	-- Export everything to an FBX file!
-	newFBXPath = ("C:\\Users\makiah\\Desktop\\BOTWModelExtractionV2\\fbxextraction\\Workspace\\" + FMDLName_array[currentExtractedModelIndex] + ".fbx")
+	newFBXPath = (USER_WORKSPACE_PATH + FMDLName_array[currentExtractedModelIndex] + ".fbx")
 	exportfile newFBXPath #noPrompt selectedOnly:false
 	
 	resetmaxfile #noprompt

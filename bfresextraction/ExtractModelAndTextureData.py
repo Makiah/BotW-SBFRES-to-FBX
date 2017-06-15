@@ -7,7 +7,7 @@ import traceback
 from customUtilities import CustomFileUtils, CommandLineUtils
 
 # Will vary based on other people's set /ps.
-sbfresCompilation = "Z:\Desktop\BOTW\SBFRES Compilation"
+sbfresCompilation = input("Where is the SBFRES compilation located?") #"Z:\Desktop\BOTW\SBFRES Compilation"
 
 # Get the initial working directory of this script.
 initialWD = os.getcwd()

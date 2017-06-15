@@ -6,15 +6,35 @@ from customUtilities import CustomFileUtils, CommandLineUtils
 # Create required references (since we are executed from a different location)
 fbxExtractionPath = os.getcwd()
 bfresDatabase = os.path.join(fbxExtractionPath, "..", "bfresextraction", "Database") # up one folder.
-modelLoadingWorkspace = os.path.join(fbxExtractionPath, "Workspace")
-fbxDatabase = os.path.join(fbxExtractionPath, "Database")
-CustomFileUtils.offerToDeleteAllInSensitiveDirectory(fbxDatabase)
-
 
 # Make sure that the model loading workspace exists.
+modelLoadingWorkspace = os.path.join(fbxExtractionPath, "Workspace")
 if not os.path.exists(modelLoadingWorkspace):
     os.makedirs(modelLoadingWorkspace)
     print("Had to create model loading workspace!")
+
+# Make sure that the database exists.
+fbxDatabase = os.path.join(fbxExtractionPath, "Database")
+if not os.path.exists(fbxDatabase):
+    os.makedirs(fbxDatabase)
+else:
+    CustomFileUtils.offerToDeleteAllInSensitiveDirectory(fbxDatabase)
+
+# Get the path to the custom script.
+bfresToFBXMAXScript = os.path.join(fbxExtractionPath, "BFRES to FBX.ms")
+
+# Ask the user for the 3DSMax executable location.
+maxExecutableLocation = "C:\\Program Files\\Autodesk\\3ds Max 2015\\3dsmax.exe"
+if not os.path.exists(maxExecutableLocation):
+    maxExecutableLocation = input("Input 3DSMax executable path: ")
+
+# Add the path of this workspace to the MAXScript (thanks StackOverflow!)
+with open(bfresToFBXMAXScript, 'r') as file:
+    # read a list of lines into data
+    data = file.readlines()
+data[0] = "USER_WORKSPACE_PATH = \"" + modelLoadingWorkspace + "\" \n"
+with open(bfresToFBXMAXScript, 'w') as file:
+    file.writelines( data )
 
 # Define the directories which have models to extract.
 for root, dirs, files in os.walk(bfresDatabase):
@@ -43,7 +63,7 @@ for root, dirs, files in os.walk(bfresDatabase):
 
 
             # Open 3DSMax and let the max script do it's THING.
-            CommandLineUtils.call(CommandLineUtils.quoted("C:\\Program Files\\Autodesk\\3ds Max 2015\\3dsmax.exe"), ["-q", "-U", "MAXScript", os.path.join(fbxExtractionPath, "BFRES to FBX.ms")])
+            CommandLineUtils.call(CommandLineUtils.quoted(maxExecutableLocation), ["-q", "-U", "MAXScript", bfresToFBXMAXScript])
 
             # Now move the FBX files it provided to the database of a folder with that name.
             os.makedirs(expectedSubdirectory)
