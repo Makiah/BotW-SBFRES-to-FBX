@@ -11,10 +11,7 @@
 -- Added type 522 for colours (signed bytes, e.g. Fire Peach's dress model in SM3DW).
 
 
--- Modified by Makiah to automatically export all models to some location while working in cohesion with a Python script.
-messagebox "Beginning modified BFRES Importer :)"
-
-
+-- Modified by Makiah to automatically export all models to some location while working in cohesion with a Python script
 fn readBEshort fstream = (bit.swapBytes (readshort fstream #unsigned) 1 2)
 fn readBElong fstream = (bit.swapBytes (bit.swapBytes (readlong fstream #unsigned) 1 4) 2 3)
 fn readBEfloat fstream = (bit.intAsFloat (bit.swapBytes (bit.swapBytes (readlong fstream #unsigned) 1 4) 2 3))
@@ -149,8 +146,6 @@ if fname != undefined do
 -- This is where we use a gross for loop in which we tell the script that the user set the dropdown to all models, and then export each one.  
 For currentExtractedModelIndex = 1 to FMDLName_array.count do
 (
-	messagebox ("Doing model " + (currentExtractedModelIndex as string) + " of " + (FMDLName_array.count as string))
-	
 	if currentExtractedModelIndex != 0 do 
 	(
 		--clearlistener()
@@ -3144,5 +3139,4 @@ For currentExtractedModelIndex = 1 to FMDLName_array.count do
 
 
 -- Exit 3DSMax.
--- quitMax #noprompt
-messagebox "MAX would quit right here.  "
+quitMax #noprompt

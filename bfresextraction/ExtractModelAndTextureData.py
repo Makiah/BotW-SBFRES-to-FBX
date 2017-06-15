@@ -16,10 +16,7 @@ initialWD = os.getcwd()
 # Set up database reference.
 databasePath = os.path.join(initialWD, "Database")
 # Ask if we should start from scratch.
-if len(os.listdir(databasePath)) > 0:
-    if input("Files exist in the database currently, remove them? (y/n): ")[0] == "y":
-        CustomFileUtils.emptyFolder(databasePath)
-
+CustomFileUtils.offerToDeleteAllInSensitiveDirectory(databasePath)
 
 
 # Register and set up workspace.

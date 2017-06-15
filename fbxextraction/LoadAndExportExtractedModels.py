@@ -8,26 +8,26 @@ fbxExtractionPath = os.getcwd()
 bfresDatabase = os.path.join(fbxExtractionPath, "..", "bfresextraction", "Database") # up one folder.
 modelLoadingWorkspace = os.path.join(fbxExtractionPath, "Workspace")
 fbxDatabase = os.path.join(fbxExtractionPath, "Database")
+CustomFileUtils.offerToDeleteAllInSensitiveDirectory(fbxDatabase)
 
 
 # Make sure that the model loading workspace exists.
 if not os.path.exists(modelLoadingWorkspace):
     os.makedirs(modelLoadingWorkspace)
     print("Had to create model loading workspace!")
-print("Reset true file")
-
-# Delete previously existing BFRES and PNG files from the workspace.
-CustomFileUtils.emptyFolder(modelLoadingWorkspace)
 
 # Define the directories which have models to extract.
 for root, dirs, files in os.walk(bfresDatabase):
     for modelSubdirectory in dirs:
         # If the FBX database has not yet contained this file.
-        expectedFBX = os.path.join(fbxDatabase, modelSubdirectory + ".fbx")
-        print("Checking for " + expectedFBX)
-        if not os.path.exists(expectedFBX):
+        expectedSubdirectory = os.path.join(fbxDatabase, modelSubdirectory)
+        print("Checking for " + expectedSubdirectory)
+        if not os.path.exists(expectedSubdirectory):
+            # Delete previously existing BFRES and PNG files from the workspace.
+            CustomFileUtils.emptyFolder(modelLoadingWorkspace)
+
             # Output that it currently does not exist.
-            print(expectedFBX + " doesn't exist!  Exporting now.")
+            print(expectedSubdirectory + " doesn't exist!  Exporting now.")
 
             # Prepare this set of files.
             exportedBfresSubdirectory = os.path.join(bfresDatabase, modelSubdirectory)
@@ -42,14 +42,18 @@ for root, dirs, files in os.walk(bfresDatabase):
                     print("Renamed " + bfresOrTextureFile + " to model.bfres")
 
 
-            # Open 3DSMax and open the launch script file.
-            input("Hold up boi")
-            #CommandLineUtils.call(CommandLineUtils.quoted("C:\\Program Files\\Autodesk\\3ds Max 2015\\3dsmax.exe"), ["-q", "-U", "MAXScript", os.path.join(fbxExtractionPath, "BFRES to FBX.ms")])
+            # Open 3DSMax and let the max script do it's THING.
+            CommandLineUtils.call(CommandLineUtils.quoted("C:\\Program Files\\Autodesk\\3ds Max 2015\\3dsmax.exe"), ["-q", "-U", "MAXScript", os.path.join(fbxExtractionPath, "BFRES to FBX.ms")])
 
-            input("Got back control")
+            # Now move the FBX files it provided to the database of a folder with that name.
+            os.makedirs(expectedSubdirectory)
+            for possibleFBXExport in os.listdir(modelLoadingWorkspace):
+                if possibleFBXExport.endswith(".fbx"):
+                    shutil.move(os.path.join(modelLoadingWorkspace, possibleFBXExport), expectedSubdirectory)
+                    print("Added " + possibleFBXExport + " to the database! :)")
 
         else:
-            print(expectedFBX + " already exists!  Skipping.")
+            print(expectedSubdirectory + " already exists!  Skipping.")
 
 # Remove the model loading workspace so that the PhraseExpress script knows to stop.
 print("Completed successfully!  :)")
