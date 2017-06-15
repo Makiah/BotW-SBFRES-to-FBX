@@ -1,4 +1,4 @@
-# Automated SBFRES Extractor for BoTW #
+# Automated SBFRES Extractor for Zelda BotW #
 
 ## Disclaimer ##
 
