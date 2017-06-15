@@ -36,13 +36,15 @@ for root, dirs, files in os.walk(bfresDatabase):
                 shutil.copy(os.path.join(exportedBfresSubdirectory, bfresOrTextureFile), modelLoadingWorkspace)
                 print("Added " + bfresOrTextureFile + " to the workspace!")
 
-                # Rename file.bfres to _file.bfres so that it ends up at the top of the list.
+                # Rename "file".bfres to model.bfres so that it is loaded by the maxscript.
                 if bfresOrTextureFile.endswith(".bfres"):
-                    shutil.move(os.path.join(modelLoadingWorkspace, bfresOrTextureFile), os.path.join(modelLoadingWorkspace, "_" + bfresOrTextureFile))
+                    shutil.move(os.path.join(modelLoadingWorkspace, bfresOrTextureFile), os.path.join(modelLoadingWorkspace, "model.bfres"))
+                    print("Renamed " + bfresOrTextureFile + " to model.bfres")
 
 
             # Open 3DSMax and open the launch script file.
-            CommandLineUtils.call(CommandLineUtils.quoted("C:\\Program Files\\Autodesk\\3ds Max 2015\\3dsmax.exe"), ["-q", "-U", "MAXScript", os.path.join(fbxExtractionPath, "Libraries", "WiiU_BFRESImporter", "BFRES to FBX.ms")])
+            input("Hold up boi")
+            #CommandLineUtils.call(CommandLineUtils.quoted("C:\\Program Files\\Autodesk\\3ds Max 2015\\3dsmax.exe"), ["-q", "-U", "MAXScript", os.path.join(fbxExtractionPath, "BFRES to FBX.ms")])
 
             input("Got back control")
 

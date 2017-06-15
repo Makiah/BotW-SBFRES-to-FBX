@@ -10,11 +10,6 @@
 -- Added support for reading normals, thanks to Ploaj for helping with the 10-bit nonsense!
 -- Added type 522 for colours (signed bytes, e.g. Fire Peach's dress model in SM3DW).
 
-
--- Modified by Makiah to automatically export all models to some location while working in cohesion with a Python script.
-messagebox "Beginning modified BFRES Importer :)"
-
-
 fn readBEshort fstream = (bit.swapBytes (readshort fstream #unsigned) 1 2)
 fn readBElong fstream = (bit.swapBytes (bit.swapBytes (readlong fstream #unsigned) 1 4) 2 3)
 fn readBEfloat fstream = (bit.intAsFloat (bit.swapBytes (bit.swapBytes (readlong fstream #unsigned) 1 4) 2 3))
@@ -67,10 +62,9 @@ FMDLOffset_array = #()
 f = #()
 p = #()
 
-
 rollout BFRESImporter "Wii U BFRES model importer" width:390 height:195
 (
-	label lblDisclaimer "This script was written by ItsEasyActually and Random Talking Bush. If you use it, consider giving us both thanks for this. If something doesn't work right, please contact RTB on The VG Resource (Random Talking Bush), Twitter, Tumblr or Steam (RandomTBush) so that any problems can be fixed.  Automatic exporter by Makiah." pos:[8,8] width:375 height:55
+	label lblDisclaimer "This script was written by ItsEasyActually and Random Talking Bush. If you use it, consider giving us both thanks for this. If something doesn't work right, please contact RTB on The VG Resource (Random Talking Bush), Twitter, Tumblr or Steam (RandomTBush) so that any problems can be fixed." pos:[8,8] width:375 height:55
 
 	button btnLoad "Load BFRES" pos:[8,65] width:90 height:20
 	button btnImport "Import BFMDL" pos:[108,65] width:90 height:20
@@ -158,7 +152,6 @@ For mdl = 1 to FMDLTotal Do (
 	fseek f NextFMDL#seek_set
 )
 
--- Makiah: Assuming that this is the dropdown list populator.  Have to write this to a file somewhere.  
 lstFMDL.items = FMDLName_array
 lstFMDL.selection = 1
 
@@ -3123,9 +3116,4 @@ Print ("Done! ("+((((timestamp())-st)*0.001)as string)+" Seconds)")
 )
 )
 
-
 CreateDialog BFRESImporter
-
-
--- Exit 3DSMax.
-quitMax #noprompt
