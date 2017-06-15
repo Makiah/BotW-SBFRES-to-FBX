@@ -1,0 +1,9 @@
+# Required files.
+from sbfresgrouper import CreateSBFRESCompilation
+from bfresextraction import ExtractModelAndTextureData
+from fbxextraction import LoadAndExportExtractedModels
+
+# Do everything!
+createdCompilationFolder = CreateSBFRESCompilation.createCompilation()
+ExtractModelAndTextureData.extractModelAndTextureData(createdCompilationFolder)
+LoadAndExportExtractedModels.loadAndExportModels()
