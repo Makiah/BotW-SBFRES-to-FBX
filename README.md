@@ -2,7 +2,7 @@
 
 ## The idea ##
 
-This is an extension on what was already a fairly complex tool.  The idea here is that the ENTIRE repository of BOTW SBFRES files is exported into FBX files from 3DSMax in one fell swoop.  Now, this is no easy task.  Max includes zero scripting API for exporting files, and that would be hard enough, considering that the models must be manually rotated.  In addition, models occasionally SHARE textures, making it really hard to export them all to different files.  How will it be done?  
+This is an extension on what was already a fairly complex tool.  The idea here is that the ENTIRE repository of BOTW SBFRES files is exported into FBX files from 3DSMax in one fell swoop.  Now, this is no easy task.  Max includes zero scripting API for exporting files, and that would be hard enough, considering that the models must be manually rotated.  In addition, models occasionally SHARE textures, making it really hard to export them all to different files.  How will it be done?  branch change
 
 ## The code ##
 
