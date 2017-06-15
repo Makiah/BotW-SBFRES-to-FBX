@@ -7,9 +7,10 @@ Avoid distributing the resulting models from implementing this tool, as they are
 ## Dependencies ##
 
  - Windows.  I am a Mac user through and through, but you really don't have a choice on this one, as all of the code has been previously developed for Windows.  I used 10, but 7 or 8 might work as well (try VirtualBox or Parallels if you don't want to dual boot).  
- - Python 3.x.x, you can get it by installing [Scoop](scoop.sh) and then installing python3, or by downloading it from [python.org](python.org)
+ - Python 3.x.x, you can get it by installing [Scoop](http://scoop.sh/) and then installing python3, or by downloading it from [Python.org](python.org)
  - 3DSMax (preferably 2015).  I would prefer Blender honestly but the best scripts have been made for 3DSMax, and it isn't a bad tool ignoring the hefty price tag.  
  - This repository's contents (duh)
+ - PyCharm, if you want to edit.  Since there is a free version, I suggest editing with that over another IDE.  
 
 ## Implementation ##
 
