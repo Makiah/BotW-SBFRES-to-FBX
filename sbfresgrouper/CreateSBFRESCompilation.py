@@ -11,10 +11,10 @@ def createCompilation():
         botwContent = input("Where are the BoTW resources?: ")
 
     # Create the desired compilation folder.
-    desiredCompilationFolder = input("Where should we compile the SBFRES files?: ")
+    desiredCompilationFolder = os.path.join(os.getcwd(), "Compilation")
     if not os.path.exists(desiredCompilationFolder):
         os.makedirs(desiredCompilationFolder)
-        print("Created folder.")
+        print("Created compilation folder.")
     else:
         CustomFileUtils.offerToDeleteAllInSensitiveDirectory(desiredCompilationFolder)
 
@@ -22,8 +22,12 @@ def createCompilation():
     for root, dirs, files in os.walk(botwContent):
         for file in files:
             if file.endswith(".sbfres"):
-                 shutil.copy(os.path.join(root, file), desiredCompilationFolder)
-                 print("Copied " + os.path.join(root, file) + " to " + desiredCompilationFolder)
+                expectedFile = os.path.join(desiredCompilationFolder, file)
+                if not os.path.exists(expectedFile):
+                    shutil.copy(os.path.join(root, file), desiredCompilationFolder)
+                    print("Copied " + os.path.join(root, file) + " to " + desiredCompilationFolder)
+                else:
+                    print("Skipping " + expectedFile)
 
     print("Created compilation successfully!")
 

@@ -17,7 +17,7 @@ def getFilenameFromPath(path: str):
 
 def offerToDeleteAllInSensitiveDirectory(pathToSensitiveDirectory: str):
     if len(os.listdir(pathToSensitiveDirectory)) > 0:
-        if input("Files exist in the database currently, remove them? (y/n): ")[0] == "y":
+        if input("Files exist in " + pathToSensitiveDirectory + " currently, remove them? (y/n): ")[0] == "y":
             print("5 seconds to change your mind...")
             time.sleep(5)
             emptyFolder(pathToSensitiveDirectory)

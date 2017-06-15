@@ -6,18 +6,21 @@ import traceback
 # Import from a different folder.
 from customUtilities import CustomFileUtils, CommandLineUtils
 
-def extractModelAndTextureData(sbfresCompilation: str):
-    # Will vary based on other people's set ups.
-    while not os.path.exists(sbfresCompilation):
-        sbfresCompilation = input("Where is the SBFRES compilation located?")
-
+def extractModelAndTextureData():
     # Get the initial working directory of this script.
     initialWD = os.getcwd()
 
+    # Will vary based on other people's set ups.
+    sbfresCompilation = os.path.join(initialWD, "..", "sbfresgrouper", "Compilation")
+
     # Set up database reference.
     databasePath = os.path.join(initialWD, "Database")
-    # Ask if we should start from scratch.
-    CustomFileUtils.offerToDeleteAllInSensitiveDirectory(databasePath)
+    if not os.path.exists(databasePath):
+        # Create the folder if it didn't already exist.
+        os.makedirs(databasePath)
+    else:
+        # Ask if we should start from scratch.
+        CustomFileUtils.offerToDeleteAllInSensitiveDirectory(databasePath)
 
 
     # Register and set up workspace.
