@@ -14,6 +14,8 @@ USER_WORKSPACE_PATH = "C:\Users\makiah\Desktop\BOTWModelExtractionV2\fbxextracti
 
 
 -- Modified by Makiah to automatically export all models to some location while working in cohesion with a Python script
+
+
 fn readBEshort fstream = (bit.swapBytes (readshort fstream #unsigned) 1 2)
 fn readBElong fstream = (bit.swapBytes (bit.swapBytes (readlong fstream #unsigned) 1 4) 2 3)
 fn readBEfloat fstream = (bit.intAsFloat (bit.swapBytes (bit.swapBytes (readlong fstream #unsigned) 1 4) 2 3))

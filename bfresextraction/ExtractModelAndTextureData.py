@@ -45,6 +45,7 @@ def extractModelAndTextureData():
     shutil.copy(os.path.join(texConv2Library, "gfd.dll"), workspacePath)
     shutil.copy(os.path.join(texConv2Library, "texUtils.dll"), workspacePath)
     shutil.copy(os.path.join(texConv2Library, "TexConv2.exe"), workspacePath)
+    quickBMSExecutablePath = os.path.join("Libraries", "quickbms", "quickbms.exe")
 
     # DDS to PNG Conversion libraries
     os.makedirs(os.path.join(workspacePath, "ToPNGConvert"))
@@ -175,7 +176,7 @@ def extractModelAndTextureData():
                 texturefile = shutil.move(rarcFilePath, os.path.join(os.path.dirname(rarcFilePath), "texturefile.rarc"))
 
                 # Extract GTX files with QuickBMS and script made by RTB.
-                CommandLineUtils.call(os.path.join(initialWD, "Libraries", "quickbms", "quickbms.exe"), ["-K", os.path.join(initialWD, "Libraries", "WiiU_BFREStoGTX", "BFRES_Textures_NoMips_BotWTex1Only.bms"), texturefile, workspacePath])
+                CommandLineUtils.call(quickBMSExecutablePath, ["-K", os.path.join(initialWD, "Libraries", "WiiU_BFREStoGTX", "BFRES_Textures_NoMips_BotWTex1Only.bms"), texturefile, workspacePath])
 
                 # Remove the texture file.
                 os.remove(texturefile)
@@ -197,7 +198,7 @@ def extractModelAndTextureData():
                 os.chdir(initialWD)
 
                 # Apply the transparency fix to these DDS files.
-                CommandLineUtils.call(os.path.join(initialWD, "Libraries", "quickbms", "quickbms.exe"), ["-K", os.path.join(initialWD, "Libraries", "BFLIMDDS", "BFLIMDDSFix.bms"), os.path.join(outDDSLosslessFolder, "*.dds"), transparencyFixFolder])
+                CommandLineUtils.call(quickBMSExecutablePath, ["-K", os.path.join(initialWD, "Libraries", "BFLIMDDS", "BFLIMDDSFix.bms"), os.path.join(outDDSLosslessFolder, "*.dds"), transparencyFixFolder])
 
                 # Convert all created DDS files to PNG.
                 for fixedFile in os.listdir(transparencyFixFolder):
@@ -236,4 +237,4 @@ def extractModelAndTextureData():
     print("Added all files to the database successfully :)")
 
 if __name__ == "__main__":
-    extractModelAndTextureData("")
+    extractModelAndTextureData()
