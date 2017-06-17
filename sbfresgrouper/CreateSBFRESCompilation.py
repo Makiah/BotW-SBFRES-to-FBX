@@ -4,7 +4,7 @@ from customUtilities import CustomFileUtils
 
 def createCompilation():
     # Query the user on both where the existent compilation is, and where to put these files.
-    botwContent = "Z:\Desktop\BOTW\SBFRES Compilation" # My personal location.
+    botwContent = "Z:\Desktop\BOTW\Raw Assets" # My personal location.
     while not os.path.exists(botwContent):
         if not botwContent == "":
             print("Invalid location!")

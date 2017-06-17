@@ -1,4 +1,4 @@
-USER_WORKSPACE_PATH = "C:\Users\makiah\Desktop\BOTWModelExtractionV2\fbxextraction\Workspace" 
+USER_WORKSPACE_PATH = "C:\\Users\\makiah\\Desktop\\BotW SBFRES to FBX\\fbxextraction\\Workspace\\" 
 
 -- Importer for Wii U BFRES Files seen in many Nintendo games.
 -- Written by ItsEasyActually and Random Talking Bush (with some help from Ploaj).
@@ -3129,6 +3129,7 @@ For currentExtractedModelIndex = 1 to FMDLName_array.count do
 	rotate selection 90 [1,0,0]
 	
 	-- Export everything to an FBX file!
+	FBXExporterSetParam "LoadExportPresetFile" (USER_WORKSPACE_PATH + "..\\BotW Export Preset.fbxexportpreset") -- The preset is up one folder.  
 	newFBXPath = (USER_WORKSPACE_PATH + FMDLName_array[currentExtractedModelIndex] + ".fbx")
 	exportfile newFBXPath #noPrompt selectedOnly:false
 	

@@ -33,7 +33,7 @@ def loadAndExportModels():
     with open(bfresToFBXMAXScript, 'r') as file:
         # read a list of lines into data
         data = file.readlines()
-    data[0] = "USER_WORKSPACE_PATH = \"" + modelLoadingWorkspace + "\" \n"
+    data[0] = "USER_WORKSPACE_PATH = \"" + (modelLoadingWorkspace + "\\").replace('\\', '\\\\') + "\" \n"
     with open(bfresToFBXMAXScript, 'w') as file:
         file.writelines( data )
 

@@ -4,6 +4,8 @@
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/bfresextraction/Database" />
       <excludeFolder url="file://$MODULE_DIR$/bfresextraction/Workspace" />
+      <excludeFolder url="file://$MODULE_DIR$/fbxextraction/Database" />
+      <excludeFolder url="file://$MODULE_DIR$/fbxextraction/Workspace" />
       <excludeFolder url="file://$MODULE_DIR$/sbfresgrouper/Compilation" />
     </content>
     <orderEntry type="inheritedJdk" />

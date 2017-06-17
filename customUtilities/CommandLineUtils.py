@@ -14,3 +14,6 @@ def call(item: str, args: list):
 
     # DO NOT REMOVE stdout.read() BELOW
     subprocess.Popen(item + argsString, shell=True, stdout=subprocess.PIPE).stdout.read()
+
+def toQuotedPath(path: str):
+    return quoted(path).replace("\\", "\\\\")
