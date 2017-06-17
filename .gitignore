@@ -54,3 +54,7 @@ bfresextraction/Workspace/*
 fbxextraction/Database/*
 fbxextraction/Workspace/*
 sbfresgrouper/Compilation/*
+
+._.DS_Store
+.DS_Store
+Thumbs.db
