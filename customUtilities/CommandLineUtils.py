@@ -10,9 +10,10 @@ def quoted(string: str):
 def call(item: str, args: list):
     argsString = ""
     for arg in args:
-        argsString += " " + quoted(arg)
+        argsString += " " + arg
 
     # DO NOT REMOVE stdout.read() BELOW
+    print("Calling " + item + argsString)
     subprocess.Popen(item + argsString, shell=True, stdout=subprocess.PIPE).stdout.read()
 
 def toQuotedPath(path: str):

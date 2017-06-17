@@ -100,7 +100,7 @@ def extractModelAndTextureData():
     # Extracting given files.
     def extractSBFREStoRARC(sbfresPath: str):
         # Extract SBFRES with yaz0dec.
-        CommandLineUtils.call(CommandLineUtils.quoted(os.path.join(initialWD, "Libraries", "szstools", "yaz0dec.exe")), [sbfresPath])
+        CommandLineUtils.call(CommandLineUtils.quoted(os.path.join("Libraries", "szstools", "yaz0dec.exe")), [CommandLineUtils.quoted(sbfresPath)])
 
         # Delete original SBFRES.
         os.remove(sbfresPath)
@@ -176,7 +176,7 @@ def extractModelAndTextureData():
                 texturefile = shutil.move(rarcFilePath, os.path.join(os.path.dirname(rarcFilePath), "texturefile.rarc"))
 
                 # Extract GTX files with QuickBMS and script made by RTB.
-                CommandLineUtils.call(quickBMSExecutablePath, ["-K", os.path.join(initialWD, "Libraries", "WiiU_BFREStoGTX", "BFRES_Textures_NoMips_BotWTex1Only.bms"), texturefile, workspacePath])
+                CommandLineUtils.call(quickBMSExecutablePath, ["-Q", "-K", os.path.join("Libraries", "WiiU_BFREStoGTX", "BFRES_Textures_NoMips_BotWTex1Only.bms"), CommandLineUtils.quoted(texturefile), CommandLineUtils.quoted(workspacePath)])
 
                 # Remove the texture file.
                 os.remove(texturefile)
@@ -198,7 +198,7 @@ def extractModelAndTextureData():
                 os.chdir(initialWD)
 
                 # Apply the transparency fix to these DDS files.
-                CommandLineUtils.call(quickBMSExecutablePath, ["-K", os.path.join(initialWD, "Libraries", "BFLIMDDS", "BFLIMDDSFix.bms"), os.path.join(outDDSLosslessFolder, "*.dds"), transparencyFixFolder])
+                CommandLineUtils.call(quickBMSExecutablePath, ["-Q", "-K", os.path.join("Libraries", "BFLIMDDS", "BFLIMDDSFix.bms"), CommandLineUtils.quoted(os.path.join(outDDSLosslessFolder, "*.dds")), CommandLineUtils.quoted(transparencyFixFolder)])
 
                 # Convert all created DDS files to PNG.
                 for fixedFile in os.listdir(transparencyFixFolder):

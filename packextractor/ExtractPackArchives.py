@@ -4,7 +4,7 @@ from customUtilities import CommandLineUtils
 def extractAllPackArchives():
 
     # SARC Extract library.
-    sarcExtractPYPath = os.path.join(os.getcwd(), "Libraries", "WiiUTools-master", "SARCTools", "SARCExtract.py")
+    sarcExtractPYPath = os.path.join("Libraries", "WiiUTools-master", "SARCTools", "SARCExtract.py")
 
     # Query the user on both where the existent compilation is, and where to put these files.
     botwContent = "Z:\Desktop\BOTW\Raw Assets" # My personal location.
