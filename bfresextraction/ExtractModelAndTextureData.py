@@ -125,7 +125,7 @@ def extractModelAndTextureData():
     # Extract every file from the pair list database: the grunt work
     for currentModelTexturePair in mtPairList:
         # Output to the user what we are currently extracting and update the sbfresState pending model.
-        print("Currently extracting " + currentModelTexturePair.itemName)
+        print("\n\nCurrently extracting " + currentModelTexturePair.itemName)
 
         # Create the boolean which will keep track of something going wrong during this process.
         somethingWentWrong = False
@@ -176,7 +176,7 @@ def extractModelAndTextureData():
                 texturefile = shutil.move(rarcFilePath, os.path.join(os.path.dirname(rarcFilePath), "texturefile.rarc"))
 
                 # Extract GTX files with QuickBMS and script made by RTB.
-                CommandLineUtils.call(quickBMSExecutablePath, ["-Q", "-K", os.path.join("Libraries", "WiiU_BFREStoGTX", "BFRES_Textures_NoMips_BotWTex1Only.bms"), CommandLineUtils.quoted(texturefile), CommandLineUtils.quoted(workspacePath)])
+                CommandLineUtils.call(quickBMSExecutablePath, ["-Q", "-K", "-Y", os.path.join("Libraries", "WiiU_BFREStoGTX", "BFRES_Textures_NoMips_BotWTex1Only.bms"), CommandLineUtils.quoted(texturefile), CommandLineUtils.quoted(workspacePath)])
 
                 # Remove the texture file.
                 os.remove(texturefile)
@@ -194,11 +194,11 @@ def extractModelAndTextureData():
 
                 # Convert these GTX files to DDS files.
                 os.chdir(workspacePath)
-                CommandLineUtils.call(os.path.join(workspacePath, "convertGTX.bat"), [])
+                CommandLineUtils.call("convertGTX.bat", [])
                 os.chdir(initialWD)
 
                 # Apply the transparency fix to these DDS files.
-                CommandLineUtils.call(quickBMSExecutablePath, ["-Q", "-K", os.path.join("Libraries", "BFLIMDDS", "BFLIMDDSFix.bms"), CommandLineUtils.quoted(os.path.join(outDDSLosslessFolder, "*.dds")), CommandLineUtils.quoted(transparencyFixFolder)])
+                CommandLineUtils.call(quickBMSExecutablePath, ["-Q", "-K", "-Y", os.path.join("Libraries", "BFLIMDDS", "BFLIMDDSFix.bms"), CommandLineUtils.quoted(os.path.join(outDDSLosslessFolder, "*.dds")), CommandLineUtils.quoted(transparencyFixFolder)])
 
                 # Convert all created DDS files to PNG.
                 for fixedFile in os.listdir(transparencyFixFolder):

@@ -23,3 +23,8 @@ def click(x: int, y: int):
 # Move the cursor to a certain location.
 def moveCursorTo(x: int, y: int):
     windll.user32.SetCursorPos(x, y)
+
+if __name__ == "__main__":
+    while True:
+        click(500, 500)
+        time.sleep(4000)

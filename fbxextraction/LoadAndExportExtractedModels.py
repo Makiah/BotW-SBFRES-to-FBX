@@ -64,7 +64,7 @@ def loadAndExportModels():
 
 
                 # Open 3DSMax and let the max script do it's THING.
-                CommandLineUtils.call(CommandLineUtils.quoted(maxExecutableLocation), ["-q", "-U", "MAXScript", bfresToFBXMAXScript])
+                CommandLineUtils.call(CommandLineUtils.quoted(maxExecutableLocation), ["-q", "-U", "MAXScript", CommandLineUtils.quoted(bfresToFBXMAXScript)])
 
                 # Now move the FBX files it provided to the database of a folder with that name.
                 os.makedirs(expectedSubdirectory)
