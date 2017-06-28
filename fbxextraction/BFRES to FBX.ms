@@ -106,6 +106,7 @@ if fname != undefined do
 	FMDLTotal = ReadBELong f
 	fseek f 0x10#seek_cur
 
+	-- For every discovered model.  
 	For mdl = 1 to FMDLTotal Do 
 	(
 		fseek f 12#seek_cur
