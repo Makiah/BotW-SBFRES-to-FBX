@@ -13,10 +13,18 @@ Avoid distributing the resulting models from implementing this tool, as they are
  - This repository's contents (duh)
  - PyCharm, if you want to edit.  Since there is a free version, I suggest editing with that over another IDE.  
 
+ 
+ ## Python Install ##
+ I suggest doing the following instead of using the online installers: 
+ 1. In powershell, install scoop as follows: `iex (new-object net.webclient).downloadstring('https://get.scoop.sh')`.  
+ 2. Run `scoop install python` to install Python 3.x
+ 3. Run `scoop bucket add versions` and then `scoop install python27` in order to install Python 2.7.
+
+
 ## Implementation ##
 
 First, you'll need the models found by extracting your Wii U disc's content.  This can be done with a number of existent tools, but I'll let you make the decision.  Definitely don't torrent them, as that would be illegal and would give you a RAR archive which you would then just have to extract.  
-Then, clone this repository in SourceTree or extract the downloaded ZIP archive.  Then run `cd /extracted/project/copy`, and finally, `python3 CompleteAutomation.py`.  This should take care of everything, and after about a day or so (it'll probably take that long), you can open the FBX files in fbxextraction/.  For a more in-depth analysis of how it works, look at the next section.  
+Then, clone this repository in SourceTree or extract the downloaded ZIP archive.  Then run `cd /extracted/project/copy`, and finally, `python3 RunMe.py`. This should take care of everything, and after about a day or so (it'll probably take that long), you can open the FBX files in fbxextraction/.  For a more in-depth analysis of how it works, look at the next section.  
 
 ## Automation ##
 
