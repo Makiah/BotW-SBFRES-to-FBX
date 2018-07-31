@@ -86,7 +86,7 @@ rollout BFRESImporter "Wii U / Switch BFRES model importer" width:450 height:300
 	multiListBox lstFMDL pos:[210,95] width:230 height:13 items:#()
 
 	groupBox OptionsBox "Options" pos:[7,66] width:190 height:205
-	radiobuttons tglTexFormat "Texture format:" labels:#("DDS","PNG") pos:[18,85] height:10 columns:2 default:1
+	radiobuttons tglTexFormat "Texture format:" labels:#("DDS","PNG") pos:[18,85] height:10 columns:2 default:2
 	radiobuttons tglUVLayers "UV layering:" labels:#("Merge","Split","No") pos:[18,120] height:10 columns:3 default:1
 	radiobuttons tglRigModel "Import rigging:" labels:#("Yes","No") pos:[18,155] height:10 columns:2 default:1
 	radiobuttons tglLODs "Import LODs:" labels:#("Yes","No") pos:[18,190] height:10 columns:2 default:2
