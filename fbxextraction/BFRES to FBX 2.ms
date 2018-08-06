@@ -1,4 +1,4 @@
-USER_WORKSPACE_PATH = "C:\\Users\\makiah\\Desktop\\BotW-SBFRES-to-FBX\\fbxextraction\\Workspace\\" 
+USER_WORKSPACE_PATH = "C:\\Users\\makiah\\Desktop\\BS2F2\\fbxextraction\\Workspace\\" 
 
 -- Importer for Wii U / Switch BFRES files seen in many Nintendo games. 
 -- Written by ItsEasyActually and Random Talking Bush (with some help from Ploaj for 10-bit normal values, and Sylk for optimizations and assistance in general).
@@ -3665,7 +3665,7 @@ rollout BFRESImporter "Wii U / Switch BFRES model importer" width:450 height:300
 		)
 	
 		select toSelect
-		rotate selection 90 [1,0,0]
+		--rotate selection 90 [1,0,0]
 	
 		FBXExporterSetParam "LoadExportPresetFile" (USER_WORKSPACE_PATH + "..\\BotW Export Preset.fbxexportpreset")
 		newFBXPath = (USER_WORKSPACE_PATH + lstFMDL.items[currentExtractedModelIndex] + ".fbx")
