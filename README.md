@@ -22,24 +22,33 @@ For each section, you'll need Python 3 so I suggest installing that first.
 
 ### PACK Extraction 
 Searches through the entirety of the game directories and finds PACK files, then extracts them to a directory in the same path.  
+
 Thanks to: NWPlayer123 for `SARCExtract.py`.
+
 Additional requirements: Python 2.7.
 
 ### SBFRES grouping
 Super simple, just takes all discovered SBFRES files (including extracted ones) and moves them to a `Compilation` subdirectory.  
+
 Additional requirements: None.
 
 ### Texture Extraction
 A bit more complex: uses yaz0dec to extract the model and tex1 sbfres files, and then uses an assortment of libraries to extract and convert the textures to PNG format.  
+
 Thanks to: [Random Talking Bush from the VG Resource](https://www.vg-resource.com/thread-29836.html) for his QuickBMS scripts, NWPlayer123 for TexConv2, and the creators of ImageMagick. 
+
 Additional requirements: None (everything included in `Libraries`).  
 
 ### Model Extraction
 Uses RTB's BFRES extraction MAXScript via 3DS Max to render the model and load the previously extracted textures, then uses some MAXScript I wrote to automate the process via a startup script argument.  
+
 Thanks to: Random Talking Bush for the [extraction script](https://www.vg-resource.com/thread-29836.html).  
+
 Additional requirements: 3DS Max 2015/16.  
 
 ### Animation Extraction (WiP)
 Extracts Maya animations (.anim files) in each animation sbfres via an automated fork of Smash Forge, and then applies them to an imported FBX model in Maya before exporting the models with the embedded animations.  
+
 Thanks to: [KillzXGaming](https://github.com/KillzXGaming) for his terrific work on [Smash Forge](https://github.com/jam1garner/Smash-Forge) that enabled animation extraction.  
+
 Additional requirements: Maya 2016.  
