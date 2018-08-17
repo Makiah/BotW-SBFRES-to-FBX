@@ -1,7 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\animextraction",
+    "\\bfresextraction",
+    "\\fbxextraction",
+    "\\sbfresgrouper"
   ],
-  "SelectedNode": "\\CompleteAutomation.py",
+  "SelectedNode": "\\RunMe.py",
   "PreviewInSolutionExplorer": false
 }

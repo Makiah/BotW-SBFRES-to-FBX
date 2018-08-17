@@ -13,6 +13,7 @@ if __name__ == "__main__":
     print("3: Run the SBFRES compiler, which will organize all SBFRES files into a database, making them easier to modify")
     print("4: Run BFRES extraction, which will employ the SBFRES database (has to be organized before use) to extract all textures")
     print("5: Run the FBX extractor, which will use 3DS Max and RTB's loading script to get FBX models for all in-game assets")
+    print("6: Attempt to run the ")
     print("Note: please avoid using special characters or spaces in your paths, they interfere with aspects of the extraction")
      
     initialWD = os.getcwd()

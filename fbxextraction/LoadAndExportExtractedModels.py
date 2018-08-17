@@ -43,7 +43,7 @@ def loadAndExportModels():
             # If the FBX database has not yet contained this file.
             expectedSubdirectory = os.path.join(fbxDatabase, modelSubdirectory)
             print("Checking for " + expectedSubdirectory)
-            if not os.path.exists(expectedSubdirectory):
+            if not os.path.exists(os.path.join(expectedSubdirectory, "model.bfres")):
                 # Delete previously existing BFRES and PNG files from the workspace.
                 CustomFileUtils.emptyFolder(modelLoadingWorkspace)
 

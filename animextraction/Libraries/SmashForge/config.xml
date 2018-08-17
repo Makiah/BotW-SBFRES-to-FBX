@@ -1,0 +1,158 @@
+<FORGECONFIG>
+  <!--
+            Config ENUMS
+
+            Floor Style:
+            -Normal
+            -Solid
+            -Textured
+
+            Setting the Floor Texture (must be .png):
+            <texture>(texture location)</texture>
+
+            Render Type:
+            -Shaded
+            -Normals
+            -Lighting
+            -Diffuse Maps
+            -Normal Maps
+            -Vertex Color
+            -Ambient Occlusion
+            -UV Coords
+            -UV Test Pattern
+            -Tangents
+            -Bitangents
+            -Light Set
+            -Bone Weights
+                
+            Changing the Default Texture:
+            <default_texture>(texture location)</default_texture>-->
+  <VIEWPORT>
+    <floor>
+      <enabled>True</enabled>
+      <style>WireFrame</style>
+      <color>Gray</color>
+      <size>30</size>
+    </floor>
+    <zoom_speed>1.25</zoom_speed>
+    <zoom_modifier_multiplier>2</zoom_modifier_multiplier>
+    <fov>0.524</fov>
+    <render_depth>100000</render_depth>
+    <render_background>True</render_background>
+    <back_gradient_top>#1A1A1A</back_gradient_top>
+    <back_gradient_bottom>#4D4D4D</back_gradient_bottom>
+    <GamePath>
+    </GamePath>
+  </VIEWPORT>
+  <RENDERSETTINGS>
+    <type>Shaded</type>
+    <render_vertex_color>True</render_vertex_color>
+    <render_alpha>True</render_alpha>
+    <camera_light>False</camera_light>
+    <use_normal_map>True</use_normal_map>
+    <bone_node_size>0.1</bone_node_size>
+    <lighting>
+      <enabled>True</enabled>
+      <render_diffuse>True</render_diffuse>
+      <render_specular>True</render_specular>
+      <render_fresnel>True</render_fresnel>
+      <render_reflection>True</render_reflection>
+    </lighting>
+    <diffuse>
+      <enabled>True</enabled>
+      <intensity>1</intensity>
+    </diffuse>
+    <specular>
+      <enabled>True</enabled>
+      <intensity>1</intensity>
+    </specular>
+    <fresnel>
+      <enabled>True</enabled>
+      <intensity>1</intensity>
+    </fresnel>
+    <reflection>
+      <enabled>True</enabled>
+      <intensity>1</intensity>
+    </reflection>
+    <ambient>
+      <intensity>1</intensity>
+    </ambient>
+    <render_model>
+      <enabled>True</enabled>
+      <render_selection>True</render_selection>
+      <render_wireframe>False</render_wireframe>
+      <render_bones>True</render_bones>
+      <render_bounding_spheres>False</render_bounding_spheres>
+    </render_model>
+    <render_ECB>False</render_ECB>
+    <render_hurtboxes>True</render_hurtboxes>
+    <render_hurtboxes_zone>True</render_hurtboxes_zone>
+    <render_hitboxes>True</render_hitboxes>
+    <render_interpolated_hitboxes>True</render_interpolated_hitboxes>
+    <render_hitboxes_no_overlap>False</render_hitboxes_no_overlap>
+    <render_hitboxes_mode>1</render_hitboxes_mode>
+    <render_hitbox_angles>True</render_hitbox_angles>
+    <render_special_bubbles>True</render_special_bubbles>
+    <render_ledge_grabboxes>False</render_ledge_grabboxes>
+    <render_reverse_ledge_grabboxes>False</render_reverse_ledge_grabboxes>
+    <render_tether_ledge_grabboxes>False</render_tether_ledge_grabboxes>
+    <hitbox_alpha>130</hitbox_alpha>
+    <hurtbox_alpha>80</hurtbox_alpha>
+    <hurtbox_color>#00538A</hurtbox_color>
+    <hurtbox_color_hi>#FF8E00</hurtbox_color_hi>
+    <hurtbox_color_med>#F6768E</hurtbox_color_med>
+    <hurtbox_color_low>#00538A</hurtbox_color_low>
+    <hurtbox_color_selected>#FFFFFF</hurtbox_color_selected>
+    <hitbox_angles_color>White</hitbox_angles_color>
+    <windbox_color>Blue</windbox_color>
+    <grabbox_color>Purple</grabbox_color>
+    <searchbox_color>DarkOrange</searchbox_color>
+    <counterBubble_color>#898989</counterBubble_color>
+    <reflectBubble_color>Cyan</reflectBubble_color>
+    <shieldBubble_color>Red</shieldBubble_color>
+    <absorbBubble_color>SteelBlue</absorbBubble_color>
+    <wtSlowdownBubble_color>#9A479A</wtSlowdownBubble_color>
+    <hitbox_kb_colors>
+      <color>#007D34</color>
+      <color>#FFB300</color>
+      <color>#FF6800</color>
+      <color>#C10020</color>
+    </hitbox_kb_colors>
+    <hitbox_id_colors>
+      <color>#FFB300</color>
+      <color>#803E75</color>
+      <color>#C10020</color>
+      <color>#CEA262</color>
+      <color>#817066</color>
+      <color>#00538A</color>
+      <color>#593315</color>
+    </hitbox_id_colors>
+    <render_LVD>
+      <enabled>True</enabled>
+      <render_collisions>True</render_collisions>
+      <render_collision_normals>False</render_collision_normals>
+      <render_respawns>True</render_respawns>
+      <render_spawns>True</render_spawns>
+      <render_item_spawners>True</render_item_spawners>
+      <render_general_points>True</render_general_points>
+      <render_otherLVDEntries>True</render_otherLVDEntries>
+      <render_swag>False</render_swag>
+      <render_swagZ>False</render_swagZ>
+      <reander_physicallyBasedRendering>False</reander_physicallyBasedRendering>
+    </render_LVD>
+    <render_path>True</render_path>
+    <render_indicators>False</render_indicators>
+  </RENDERSETTINGS>
+  <ETC>
+    <param_dir>
+    </param_dir>
+  </ETC>
+  <DISCORDSETTINGS>
+    <image_key_mode>0</image_key_mode>
+    <user_image_key>forge</user_image_key>
+    <use_user_mod_name>False</use_user_mod_name>
+    <user_mod_name>ModNameHere</user_mod_name>
+    <show_current_window>False</show_current_window>
+    <show_time_elapsed>False</show_time_elapsed>
+  </DISCORDSETTINGS>
+</FORGECONFIG>
