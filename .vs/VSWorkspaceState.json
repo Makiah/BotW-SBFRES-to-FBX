@@ -4,6 +4,7 @@
     "\\animextraction",
     "\\bfresextraction",
     "\\fbxextraction",
+    "\\packextractor",
     "\\sbfresgrouper"
   ],
   "SelectedNode": "\\RunMe.py",

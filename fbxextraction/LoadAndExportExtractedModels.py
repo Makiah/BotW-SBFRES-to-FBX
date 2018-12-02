@@ -4,7 +4,9 @@ import shutil
 from customUtilities import CommandLineUtils, CustomFileUtils
 
 def loadAndExportModels():
-    # Create required references (since we are executed from a different location)
+    print("***Phase 4: Model Exports***")
+
+	# Create required references (since we are executed from a different location)
     fbxExtractionPath = os.getcwd()
     bfresDatabase = os.path.join(fbxExtractionPath, "..", "bfresextraction", "Database") # up one folder.
 
@@ -43,7 +45,7 @@ def loadAndExportModels():
             # If the FBX database has not yet contained this file.
             expectedSubdirectory = os.path.join(fbxDatabase, modelSubdirectory)
             print("Checking for " + expectedSubdirectory)
-            if not os.path.exists(os.path.join(expectedSubdirectory, "model.bfres")):
+            if not os.path.exists(expectedSubdirectory):
                 # Delete previously existing BFRES and PNG files from the workspace.
                 CustomFileUtils.emptyFolder(modelLoadingWorkspace)
 
@@ -79,6 +81,8 @@ def loadAndExportModels():
     # Remove the model loading workspace so that the PhraseExpress script knows to stop.
     print("Completed successfully!  :)")
     CustomFileUtils.emptyFolder(modelLoadingWorkspace)
+
+    print("\n\n")
 
 if __name__ == "__main__": 
     loadAndExportModels()
