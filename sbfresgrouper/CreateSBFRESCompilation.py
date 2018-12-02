@@ -3,6 +3,8 @@ import os, shutil
 from customUtilities import CustomFileUtils
 
 def createCompilation():
+    print("***Phase 2: SBFRES Grouping ***")
+
     # Query the user on both where the existent compilation is, and where to put these files.
     botwContent = "Z:\Desktop\BOTW\Raw Assets" # My personal location.
     while not os.path.exists(botwContent):
@@ -30,8 +32,8 @@ def createCompilation():
                     print("Skipping " + expectedFile)
 
     print("Created compilation successfully!")
-
-    return desiredCompilationFolder
+	
+    print("\n\n")
 
 if __name__ == "__main__":
     createCompilation()

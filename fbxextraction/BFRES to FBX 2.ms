@@ -1,4 +1,4 @@
-USER_WORKSPACE_PATH = "C:\\Users\\makiah\\Desktop\\BS2F2\\fbxextraction\\Workspace\\" 
+USER_WORKSPACE_PATH = "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\fbxextraction\\Workspace\\" 
 
 -- Importer for Wii U / Switch BFRES files seen in many Nintendo games. 
 -- Written by ItsEasyActually and Random Talking Bush (with some help from Ploaj for 10-bit normal values, and Sylk for optimizations and assistance in general).

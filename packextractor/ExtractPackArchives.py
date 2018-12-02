@@ -2,6 +2,8 @@ import os
 from customUtilities import CommandLineUtils
 
 def extractAllPackArchives():
+    print("***Phase 1: PACK Extraction ***")
+
     # SARC Extract library.
     sarcExtractPYPath = os.path.join(os.getcwd(), "Libraries", "WiiUTools-master", "SARCTools", "SARCExtract.py")
 
@@ -24,6 +26,8 @@ def extractAllPackArchives():
                     CommandLineUtils.call("python", [CommandLineUtils.toQuotedPath(sarcExtractPYPath), CommandLineUtils.toQuotedPath(os.path.join(root, file))])
                 else:
                     print("Skipping " + file + ", expected directory already exists at " + expectedDirectory)
+
+    print("\n\n")
 
 if __name__ == "__main__":
     extractAllPackArchives()

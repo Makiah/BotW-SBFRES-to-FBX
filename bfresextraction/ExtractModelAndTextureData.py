@@ -7,6 +7,8 @@ import traceback
 from customUtilities import CustomFileUtils, CommandLineUtils
 
 def extractModelAndTextureData():
+    print("***Phase 3: TextureExtraction***")
+
     # Get the initial working directory of this script.
     initialWD = os.getcwd()
 
@@ -235,6 +237,8 @@ def extractModelAndTextureData():
 
 
     print("Added all files to the database successfully :)")
+
+    print("\n\n")
 
 if __name__ == "__main__":
     extractModelAndTextureData()
