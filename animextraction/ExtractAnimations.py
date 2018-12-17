@@ -30,7 +30,9 @@ def extractAnimations():
 			animDatabaseSubPath = os.path.join(animDatabase, sbfresName)
 			if not os.path.exists(animDatabaseSubPath): 
 				os.makedirs(animDatabaseSubPath)
-				print("Had to make " + sbfresName + " database folder")
+			else: 
+				print("Skipping " + sbfresFile + " because already extracted")
+				continue
 			if not os.path.exists(os.path.join(animDatabaseSubPath, sbfresFile)): 
 				# copy over animation sbfres
 				shutil.copy(os.path.join(sbfresCompilation, sbfresFile), animDatabaseSubPath)

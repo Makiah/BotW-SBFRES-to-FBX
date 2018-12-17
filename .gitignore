@@ -59,6 +59,7 @@ fbxextraction/Database/*
 fbxextraction/Workspace/*
 sbfresgrouper/Compilation/*
 animextraction/Database/*
+animextraction/Database2/*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

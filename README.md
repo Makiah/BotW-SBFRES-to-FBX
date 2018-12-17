@@ -47,7 +47,7 @@ Thanks to: Random Talking Bush for the [extraction script](https://www.vg-resour
 Additional requirements: 3DS Max 2015/16.  
 
 ### Animation Extraction (WiP)
-Extracts Maya animations (.anim files) in each animation sbfres via an automated fork of Smash Forge, and then applies them to an imported FBX model in Maya before exporting the models with the embedded animations.  
+Extracts Maya animations (.anim files) in each animation sbfres via an automated fork of Smash Forge, alongside the corresponding .Animation.sbfres in one database.  Then, takes the completed models from fbxextraction and loads them in Maya, applies an animation to them, and exports the skeleton to a different set of database folders.  I couldn't figure out how to embed multiple tracks into a single FBX file that was readable by Unreal or Unity without doing frame splitting, and this was the next best thing.  
 
 Thanks to: [KillzXGaming](https://github.com/KillzXGaming) for his terrific work on [Smash Forge](https://github.com/jam1garner/Smash-Forge) that enabled animation extraction.  
 

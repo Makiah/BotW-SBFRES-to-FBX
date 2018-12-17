@@ -70,4 +70,6 @@ if __name__ == "__main__":
         os.chdir("animextraction")
         ExtractAnimations.extractAnimations()
         os.chdir(initialWD)
+        os.chdir("animextraction")
+        ApplyAnimationsToFBXModels.applyFBXModelAnimations()
 

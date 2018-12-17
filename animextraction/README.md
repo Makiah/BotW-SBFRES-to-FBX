@@ -1,0 +1,1 @@
+The second segment here is a bit complex: I was too lazy to figure out how to use while loops, file filtering/reading, and folder navigation from MEL scripts, so the Python script will output a different MEL script for each model so that Maya can read from the same location each time it runs.  
