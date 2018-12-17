@@ -1,0 +1,1127 @@
+
+// Import the main model FBX file
+file -import -type "FBX"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Goat" -options "fbx"  -pr  -importFrameRate true  -importTimeRange "override" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\..\\fbxextraction\\Database\\Animal_Goat\\Goat.fbx";
+
+// Select the skeleton hierarchy
+select -r Root ;
+select -hierarchy;
+
+// Import the animation file.  
+file -import -type "animImport"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Attack_Run" -options "targetTime=4;copies=1;option=replace;pictures=0;connect=0;"  -pr  -importTimeRange "combine" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database\\Animal_Goat\\Attack_Run.anim";
+
+// Select the skeleton hierarchy again
+select -r Root ;
+select -hierarchy;
+
+// Export the skeleton selection
+file -force -options "v=0;" -typ "FBX export" -pr -es "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database2\\Animal_Goat\\Animal_Goat_Attack_Run.fbx";
+deleteUI -window FbxWarningWindow;
+
+// Completely clear scene (perhaps a more elegant approach elsewhere?)
+file -f -new;
+
+// Start from the top while there are still animations
+
+// Import the main model FBX file
+file -import -type "FBX"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Goat" -options "fbx"  -pr  -importFrameRate true  -importTimeRange "override" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\..\\fbxextraction\\Database\\Animal_Goat\\Goat.fbx";
+
+// Select the skeleton hierarchy
+select -r Root ;
+select -hierarchy;
+
+// Import the animation file.  
+file -import -type "animImport"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Attack_Run_Curve_L" -options "targetTime=4;copies=1;option=replace;pictures=0;connect=0;"  -pr  -importTimeRange "combine" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database\\Animal_Goat\\Attack_Run_Curve_L.anim";
+
+// Select the skeleton hierarchy again
+select -r Root ;
+select -hierarchy;
+
+// Export the skeleton selection
+file -force -options "v=0;" -typ "FBX export" -pr -es "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database2\\Animal_Goat\\Animal_Goat_Attack_Run_Curve_L.fbx";
+deleteUI -window FbxWarningWindow;
+
+// Completely clear scene (perhaps a more elegant approach elsewhere?)
+file -f -new;
+
+// Start from the top while there are still animations
+
+// Import the main model FBX file
+file -import -type "FBX"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Goat" -options "fbx"  -pr  -importFrameRate true  -importTimeRange "override" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\..\\fbxextraction\\Database\\Animal_Goat\\Goat.fbx";
+
+// Select the skeleton hierarchy
+select -r Root ;
+select -hierarchy;
+
+// Import the animation file.  
+file -import -type "animImport"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Attack_Run_Curve_R" -options "targetTime=4;copies=1;option=replace;pictures=0;connect=0;"  -pr  -importTimeRange "combine" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database\\Animal_Goat\\Attack_Run_Curve_R.anim";
+
+// Select the skeleton hierarchy again
+select -r Root ;
+select -hierarchy;
+
+// Export the skeleton selection
+file -force -options "v=0;" -typ "FBX export" -pr -es "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database2\\Animal_Goat\\Animal_Goat_Attack_Run_Curve_R.fbx";
+deleteUI -window FbxWarningWindow;
+
+// Completely clear scene (perhaps a more elegant approach elsewhere?)
+file -f -new;
+
+// Start from the top while there are still animations
+
+// Import the main model FBX file
+file -import -type "FBX"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Goat" -options "fbx"  -pr  -importFrameRate true  -importTimeRange "override" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\..\\fbxextraction\\Database\\Animal_Goat\\Goat.fbx";
+
+// Select the skeleton hierarchy
+select -r Root ;
+select -hierarchy;
+
+// Import the animation file.  
+file -import -type "animImport"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Attack_Turn" -options "targetTime=4;copies=1;option=replace;pictures=0;connect=0;"  -pr  -importTimeRange "combine" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database\\Animal_Goat\\Attack_Turn.anim";
+
+// Select the skeleton hierarchy again
+select -r Root ;
+select -hierarchy;
+
+// Export the skeleton selection
+file -force -options "v=0;" -typ "FBX export" -pr -es "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database2\\Animal_Goat\\Animal_Goat_Attack_Turn.fbx";
+deleteUI -window FbxWarningWindow;
+
+// Completely clear scene (perhaps a more elegant approach elsewhere?)
+file -f -new;
+
+// Start from the top while there are still animations
+
+// Import the main model FBX file
+file -import -type "FBX"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Goat" -options "fbx"  -pr  -importFrameRate true  -importTimeRange "override" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\..\\fbxextraction\\Database\\Animal_Goat\\Goat.fbx";
+
+// Select the skeleton hierarchy
+select -r Root ;
+select -hierarchy;
+
+// Import the animation file.  
+file -import -type "animImport"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Attack_Turn_L" -options "targetTime=4;copies=1;option=replace;pictures=0;connect=0;"  -pr  -importTimeRange "combine" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database\\Animal_Goat\\Attack_Turn_L.anim";
+
+// Select the skeleton hierarchy again
+select -r Root ;
+select -hierarchy;
+
+// Export the skeleton selection
+file -force -options "v=0;" -typ "FBX export" -pr -es "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database2\\Animal_Goat\\Animal_Goat_Attack_Turn_L.fbx";
+deleteUI -window FbxWarningWindow;
+
+// Completely clear scene (perhaps a more elegant approach elsewhere?)
+file -f -new;
+
+// Start from the top while there are still animations
+
+// Import the main model FBX file
+file -import -type "FBX"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Goat" -options "fbx"  -pr  -importFrameRate true  -importTimeRange "override" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\..\\fbxextraction\\Database\\Animal_Goat\\Goat.fbx";
+
+// Select the skeleton hierarchy
+select -r Root ;
+select -hierarchy;
+
+// Import the animation file.  
+file -import -type "animImport"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Attack_Turn_R" -options "targetTime=4;copies=1;option=replace;pictures=0;connect=0;"  -pr  -importTimeRange "combine" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database\\Animal_Goat\\Attack_Turn_R.anim";
+
+// Select the skeleton hierarchy again
+select -r Root ;
+select -hierarchy;
+
+// Export the skeleton selection
+file -force -options "v=0;" -typ "FBX export" -pr -es "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database2\\Animal_Goat\\Animal_Goat_Attack_Turn_R.fbx";
+deleteUI -window FbxWarningWindow;
+
+// Completely clear scene (perhaps a more elegant approach elsewhere?)
+file -f -new;
+
+// Start from the top while there are still animations
+
+// Import the main model FBX file
+file -import -type "FBX"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Goat" -options "fbx"  -pr  -importFrameRate true  -importTimeRange "override" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\..\\fbxextraction\\Database\\Animal_Goat\\Goat.fbx";
+
+// Select the skeleton hierarchy
+select -r Root ;
+select -hierarchy;
+
+// Import the animation file.  
+file -import -type "animImport"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Damage" -options "targetTime=4;copies=1;option=replace;pictures=0;connect=0;"  -pr  -importTimeRange "combine" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database\\Animal_Goat\\Damage.anim";
+
+// Select the skeleton hierarchy again
+select -r Root ;
+select -hierarchy;
+
+// Export the skeleton selection
+file -force -options "v=0;" -typ "FBX export" -pr -es "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database2\\Animal_Goat\\Animal_Goat_Damage.fbx";
+deleteUI -window FbxWarningWindow;
+
+// Completely clear scene (perhaps a more elegant approach elsewhere?)
+file -f -new;
+
+// Start from the top while there are still animations
+
+// Import the main model FBX file
+file -import -type "FBX"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Goat" -options "fbx"  -pr  -importFrameRate true  -importTimeRange "override" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\..\\fbxextraction\\Database\\Animal_Goat\\Goat.fbx";
+
+// Select the skeleton hierarchy
+select -r Root ;
+select -hierarchy;
+
+// Import the animation file.  
+file -import -type "animImport"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Damage_Village" -options "targetTime=4;copies=1;option=replace;pictures=0;connect=0;"  -pr  -importTimeRange "combine" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database\\Animal_Goat\\Damage_Village.anim";
+
+// Select the skeleton hierarchy again
+select -r Root ;
+select -hierarchy;
+
+// Export the skeleton selection
+file -force -options "v=0;" -typ "FBX export" -pr -es "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database2\\Animal_Goat\\Animal_Goat_Damage_Village.fbx";
+deleteUI -window FbxWarningWindow;
+
+// Completely clear scene (perhaps a more elegant approach elsewhere?)
+file -f -new;
+
+// Start from the top while there are still animations
+
+// Import the main model FBX file
+file -import -type "FBX"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Goat" -options "fbx"  -pr  -importFrameRate true  -importTimeRange "override" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\..\\fbxextraction\\Database\\Animal_Goat\\Goat.fbx";
+
+// Select the skeleton hierarchy
+select -r Root ;
+select -hierarchy;
+
+// Import the animation file.  
+file -import -type "animImport"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Dead" -options "targetTime=4;copies=1;option=replace;pictures=0;connect=0;"  -pr  -importTimeRange "combine" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database\\Animal_Goat\\Dead.anim";
+
+// Select the skeleton hierarchy again
+select -r Root ;
+select -hierarchy;
+
+// Export the skeleton selection
+file -force -options "v=0;" -typ "FBX export" -pr -es "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database2\\Animal_Goat\\Animal_Goat_Dead.fbx";
+deleteUI -window FbxWarningWindow;
+
+// Completely clear scene (perhaps a more elegant approach elsewhere?)
+file -f -new;
+
+// Start from the top while there are still animations
+
+// Import the main model FBX file
+file -import -type "FBX"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Goat" -options "fbx"  -pr  -importFrameRate true  -importTimeRange "override" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\..\\fbxextraction\\Database\\Animal_Goat\\Goat.fbx";
+
+// Select the skeleton hierarchy
+select -r Root ;
+select -hierarchy;
+
+// Import the animation file.  
+file -import -type "animImport"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Eat" -options "targetTime=4;copies=1;option=replace;pictures=0;connect=0;"  -pr  -importTimeRange "combine" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database\\Animal_Goat\\Eat.anim";
+
+// Select the skeleton hierarchy again
+select -r Root ;
+select -hierarchy;
+
+// Export the skeleton selection
+file -force -options "v=0;" -typ "FBX export" -pr -es "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database2\\Animal_Goat\\Animal_Goat_Eat.fbx";
+deleteUI -window FbxWarningWindow;
+
+// Completely clear scene (perhaps a more elegant approach elsewhere?)
+file -f -new;
+
+// Start from the top while there are still animations
+
+// Import the main model FBX file
+file -import -type "FBX"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Goat" -options "fbx"  -pr  -importFrameRate true  -importTimeRange "override" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\..\\fbxextraction\\Database\\Animal_Goat\\Goat.fbx";
+
+// Select the skeleton hierarchy
+select -r Root ;
+select -hierarchy;
+
+// Import the animation file.  
+file -import -type "animImport"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Eat_Ed" -options "targetTime=4;copies=1;option=replace;pictures=0;connect=0;"  -pr  -importTimeRange "combine" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database\\Animal_Goat\\Eat_Ed.anim";
+
+// Select the skeleton hierarchy again
+select -r Root ;
+select -hierarchy;
+
+// Export the skeleton selection
+file -force -options "v=0;" -typ "FBX export" -pr -es "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database2\\Animal_Goat\\Animal_Goat_Eat_Ed.fbx";
+deleteUI -window FbxWarningWindow;
+
+// Completely clear scene (perhaps a more elegant approach elsewhere?)
+file -f -new;
+
+// Start from the top while there are still animations
+
+// Import the main model FBX file
+file -import -type "FBX"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Goat" -options "fbx"  -pr  -importFrameRate true  -importTimeRange "override" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\..\\fbxextraction\\Database\\Animal_Goat\\Goat.fbx";
+
+// Select the skeleton hierarchy
+select -r Root ;
+select -hierarchy;
+
+// Import the animation file.  
+file -import -type "animImport"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Eat_St" -options "targetTime=4;copies=1;option=replace;pictures=0;connect=0;"  -pr  -importTimeRange "combine" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database\\Animal_Goat\\Eat_St.anim";
+
+// Select the skeleton hierarchy again
+select -r Root ;
+select -hierarchy;
+
+// Export the skeleton selection
+file -force -options "v=0;" -typ "FBX export" -pr -es "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database2\\Animal_Goat\\Animal_Goat_Eat_St.fbx";
+deleteUI -window FbxWarningWindow;
+
+// Completely clear scene (perhaps a more elegant approach elsewhere?)
+file -f -new;
+
+// Start from the top while there are still animations
+
+// Import the main model FBX file
+file -import -type "FBX"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Goat" -options "fbx"  -pr  -importFrameRate true  -importTimeRange "override" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\..\\fbxextraction\\Database\\Animal_Goat\\Goat.fbx";
+
+// Select the skeleton hierarchy
+select -r Root ;
+select -hierarchy;
+
+// Import the animation file.  
+file -import -type "animImport"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Free_Fall" -options "targetTime=4;copies=1;option=replace;pictures=0;connect=0;"  -pr  -importTimeRange "combine" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database\\Animal_Goat\\Free_Fall.anim";
+
+// Select the skeleton hierarchy again
+select -r Root ;
+select -hierarchy;
+
+// Export the skeleton selection
+file -force -options "v=0;" -typ "FBX export" -pr -es "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database2\\Animal_Goat\\Animal_Goat_Free_Fall.fbx";
+deleteUI -window FbxWarningWindow;
+
+// Completely clear scene (perhaps a more elegant approach elsewhere?)
+file -f -new;
+
+// Start from the top while there are still animations
+
+// Import the main model FBX file
+file -import -type "FBX"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Goat" -options "fbx"  -pr  -importFrameRate true  -importTimeRange "override" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\..\\fbxextraction\\Database\\Animal_Goat\\Goat.fbx";
+
+// Select the skeleton hierarchy
+select -r Root ;
+select -hierarchy;
+
+// Import the animation file.  
+file -import -type "animImport"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Move_Run" -options "targetTime=4;copies=1;option=replace;pictures=0;connect=0;"  -pr  -importTimeRange "combine" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database\\Animal_Goat\\Move_Run.anim";
+
+// Select the skeleton hierarchy again
+select -r Root ;
+select -hierarchy;
+
+// Export the skeleton selection
+file -force -options "v=0;" -typ "FBX export" -pr -es "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database2\\Animal_Goat\\Animal_Goat_Move_Run.fbx";
+deleteUI -window FbxWarningWindow;
+
+// Completely clear scene (perhaps a more elegant approach elsewhere?)
+file -f -new;
+
+// Start from the top while there are still animations
+
+// Import the main model FBX file
+file -import -type "FBX"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Goat" -options "fbx"  -pr  -importFrameRate true  -importTimeRange "override" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\..\\fbxextraction\\Database\\Animal_Goat\\Goat.fbx";
+
+// Select the skeleton hierarchy
+select -r Root ;
+select -hierarchy;
+
+// Import the animation file.  
+file -import -type "animImport"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Move_Run_Curve_L" -options "targetTime=4;copies=1;option=replace;pictures=0;connect=0;"  -pr  -importTimeRange "combine" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database\\Animal_Goat\\Move_Run_Curve_L.anim";
+
+// Select the skeleton hierarchy again
+select -r Root ;
+select -hierarchy;
+
+// Export the skeleton selection
+file -force -options "v=0;" -typ "FBX export" -pr -es "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database2\\Animal_Goat\\Animal_Goat_Move_Run_Curve_L.fbx";
+deleteUI -window FbxWarningWindow;
+
+// Completely clear scene (perhaps a more elegant approach elsewhere?)
+file -f -new;
+
+// Start from the top while there are still animations
+
+// Import the main model FBX file
+file -import -type "FBX"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Goat" -options "fbx"  -pr  -importFrameRate true  -importTimeRange "override" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\..\\fbxextraction\\Database\\Animal_Goat\\Goat.fbx";
+
+// Select the skeleton hierarchy
+select -r Root ;
+select -hierarchy;
+
+// Import the animation file.  
+file -import -type "animImport"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Move_Run_Curve_R" -options "targetTime=4;copies=1;option=replace;pictures=0;connect=0;"  -pr  -importTimeRange "combine" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database\\Animal_Goat\\Move_Run_Curve_R.anim";
+
+// Select the skeleton hierarchy again
+select -r Root ;
+select -hierarchy;
+
+// Export the skeleton selection
+file -force -options "v=0;" -typ "FBX export" -pr -es "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database2\\Animal_Goat\\Animal_Goat_Move_Run_Curve_R.fbx";
+deleteUI -window FbxWarningWindow;
+
+// Completely clear scene (perhaps a more elegant approach elsewhere?)
+file -f -new;
+
+// Start from the top while there are still animations
+
+// Import the main model FBX file
+file -import -type "FBX"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Goat" -options "fbx"  -pr  -importFrameRate true  -importTimeRange "override" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\..\\fbxextraction\\Database\\Animal_Goat\\Goat.fbx";
+
+// Select the skeleton hierarchy
+select -r Root ;
+select -hierarchy;
+
+// Import the animation file.  
+file -import -type "animImport"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Move_Walk" -options "targetTime=4;copies=1;option=replace;pictures=0;connect=0;"  -pr  -importTimeRange "combine" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database\\Animal_Goat\\Move_Walk.anim";
+
+// Select the skeleton hierarchy again
+select -r Root ;
+select -hierarchy;
+
+// Export the skeleton selection
+file -force -options "v=0;" -typ "FBX export" -pr -es "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database2\\Animal_Goat\\Animal_Goat_Move_Walk.fbx";
+deleteUI -window FbxWarningWindow;
+
+// Completely clear scene (perhaps a more elegant approach elsewhere?)
+file -f -new;
+
+// Start from the top while there are still animations
+
+// Import the main model FBX file
+file -import -type "FBX"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Goat" -options "fbx"  -pr  -importFrameRate true  -importTimeRange "override" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\..\\fbxextraction\\Database\\Animal_Goat\\Goat.fbx";
+
+// Select the skeleton hierarchy
+select -r Root ;
+select -hierarchy;
+
+// Import the animation file.  
+file -import -type "animImport"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Move_Walk_Curve_L" -options "targetTime=4;copies=1;option=replace;pictures=0;connect=0;"  -pr  -importTimeRange "combine" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database\\Animal_Goat\\Move_Walk_Curve_L.anim";
+
+// Select the skeleton hierarchy again
+select -r Root ;
+select -hierarchy;
+
+// Export the skeleton selection
+file -force -options "v=0;" -typ "FBX export" -pr -es "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database2\\Animal_Goat\\Animal_Goat_Move_Walk_Curve_L.fbx";
+deleteUI -window FbxWarningWindow;
+
+// Completely clear scene (perhaps a more elegant approach elsewhere?)
+file -f -new;
+
+// Start from the top while there are still animations
+
+// Import the main model FBX file
+file -import -type "FBX"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Goat" -options "fbx"  -pr  -importFrameRate true  -importTimeRange "override" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\..\\fbxextraction\\Database\\Animal_Goat\\Goat.fbx";
+
+// Select the skeleton hierarchy
+select -r Root ;
+select -hierarchy;
+
+// Import the animation file.  
+file -import -type "animImport"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Move_Walk_Curve_R" -options "targetTime=4;copies=1;option=replace;pictures=0;connect=0;"  -pr  -importTimeRange "combine" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database\\Animal_Goat\\Move_Walk_Curve_R.anim";
+
+// Select the skeleton hierarchy again
+select -r Root ;
+select -hierarchy;
+
+// Export the skeleton selection
+file -force -options "v=0;" -typ "FBX export" -pr -es "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database2\\Animal_Goat\\Animal_Goat_Move_Walk_Curve_R.fbx";
+deleteUI -window FbxWarningWindow;
+
+// Completely clear scene (perhaps a more elegant approach elsewhere?)
+file -f -new;
+
+// Start from the top while there are still animations
+
+// Import the main model FBX file
+file -import -type "FBX"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Goat" -options "fbx"  -pr  -importFrameRate true  -importTimeRange "override" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\..\\fbxextraction\\Database\\Animal_Goat\\Goat.fbx";
+
+// Select the skeleton hierarchy
+select -r Root ;
+select -hierarchy;
+
+// Import the animation file.  
+file -import -type "animImport"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Notice" -options "targetTime=4;copies=1;option=replace;pictures=0;connect=0;"  -pr  -importTimeRange "combine" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database\\Animal_Goat\\Notice.anim";
+
+// Select the skeleton hierarchy again
+select -r Root ;
+select -hierarchy;
+
+// Export the skeleton selection
+file -force -options "v=0;" -typ "FBX export" -pr -es "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database2\\Animal_Goat\\Animal_Goat_Notice.fbx";
+deleteUI -window FbxWarningWindow;
+
+// Completely clear scene (perhaps a more elegant approach elsewhere?)
+file -f -new;
+
+// Start from the top while there are still animations
+
+// Import the main model FBX file
+file -import -type "FBX"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Goat" -options "fbx"  -pr  -importFrameRate true  -importTimeRange "override" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\..\\fbxextraction\\Database\\Animal_Goat\\Goat.fbx";
+
+// Select the skeleton hierarchy
+select -r Root ;
+select -hierarchy;
+
+// Import the animation file.  
+file -import -type "animImport"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Notice_Ed" -options "targetTime=4;copies=1;option=replace;pictures=0;connect=0;"  -pr  -importTimeRange "combine" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database\\Animal_Goat\\Notice_Ed.anim";
+
+// Select the skeleton hierarchy again
+select -r Root ;
+select -hierarchy;
+
+// Export the skeleton selection
+file -force -options "v=0;" -typ "FBX export" -pr -es "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database2\\Animal_Goat\\Animal_Goat_Notice_Ed.fbx";
+deleteUI -window FbxWarningWindow;
+
+// Completely clear scene (perhaps a more elegant approach elsewhere?)
+file -f -new;
+
+// Start from the top while there are still animations
+
+// Import the main model FBX file
+file -import -type "FBX"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Goat" -options "fbx"  -pr  -importFrameRate true  -importTimeRange "override" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\..\\fbxextraction\\Database\\Animal_Goat\\Goat.fbx";
+
+// Select the skeleton hierarchy
+select -r Root ;
+select -hierarchy;
+
+// Import the animation file.  
+file -import -type "animImport"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Notice_Hearing" -options "targetTime=4;copies=1;option=replace;pictures=0;connect=0;"  -pr  -importTimeRange "combine" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database\\Animal_Goat\\Notice_Hearing.anim";
+
+// Select the skeleton hierarchy again
+select -r Root ;
+select -hierarchy;
+
+// Export the skeleton selection
+file -force -options "v=0;" -typ "FBX export" -pr -es "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database2\\Animal_Goat\\Animal_Goat_Notice_Hearing.fbx";
+deleteUI -window FbxWarningWindow;
+
+// Completely clear scene (perhaps a more elegant approach elsewhere?)
+file -f -new;
+
+// Start from the top while there are still animations
+
+// Import the main model FBX file
+file -import -type "FBX"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Goat" -options "fbx"  -pr  -importFrameRate true  -importTimeRange "override" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\..\\fbxextraction\\Database\\Animal_Goat\\Goat.fbx";
+
+// Select the skeleton hierarchy
+select -r Root ;
+select -hierarchy;
+
+// Import the animation file.  
+file -import -type "animImport"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Notice_Hearling_St" -options "targetTime=4;copies=1;option=replace;pictures=0;connect=0;"  -pr  -importTimeRange "combine" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database\\Animal_Goat\\Notice_Hearling_St.anim";
+
+// Select the skeleton hierarchy again
+select -r Root ;
+select -hierarchy;
+
+// Export the skeleton selection
+file -force -options "v=0;" -typ "FBX export" -pr -es "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database2\\Animal_Goat\\Animal_Goat_Notice_Hearling_St.fbx";
+deleteUI -window FbxWarningWindow;
+
+// Completely clear scene (perhaps a more elegant approach elsewhere?)
+file -f -new;
+
+// Start from the top while there are still animations
+
+// Import the main model FBX file
+file -import -type "FBX"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Goat" -options "fbx"  -pr  -importFrameRate true  -importTimeRange "override" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\..\\fbxextraction\\Database\\Animal_Goat\\Goat.fbx";
+
+// Select the skeleton hierarchy
+select -r Root ;
+select -hierarchy;
+
+// Import the animation file.  
+file -import -type "animImport"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Notice_Hearling_St_L" -options "targetTime=4;copies=1;option=replace;pictures=0;connect=0;"  -pr  -importTimeRange "combine" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database\\Animal_Goat\\Notice_Hearling_St_L.anim";
+
+// Select the skeleton hierarchy again
+select -r Root ;
+select -hierarchy;
+
+// Export the skeleton selection
+file -force -options "v=0;" -typ "FBX export" -pr -es "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database2\\Animal_Goat\\Animal_Goat_Notice_Hearling_St_L.fbx";
+deleteUI -window FbxWarningWindow;
+
+// Completely clear scene (perhaps a more elegant approach elsewhere?)
+file -f -new;
+
+// Start from the top while there are still animations
+
+// Import the main model FBX file
+file -import -type "FBX"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Goat" -options "fbx"  -pr  -importFrameRate true  -importTimeRange "override" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\..\\fbxextraction\\Database\\Animal_Goat\\Goat.fbx";
+
+// Select the skeleton hierarchy
+select -r Root ;
+select -hierarchy;
+
+// Import the animation file.  
+file -import -type "animImport"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Notice_Hearling_St_R" -options "targetTime=4;copies=1;option=replace;pictures=0;connect=0;"  -pr  -importTimeRange "combine" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database\\Animal_Goat\\Notice_Hearling_St_R.anim";
+
+// Select the skeleton hierarchy again
+select -r Root ;
+select -hierarchy;
+
+// Export the skeleton selection
+file -force -options "v=0;" -typ "FBX export" -pr -es "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database2\\Animal_Goat\\Animal_Goat_Notice_Hearling_St_R.fbx";
+deleteUI -window FbxWarningWindow;
+
+// Completely clear scene (perhaps a more elegant approach elsewhere?)
+file -f -new;
+
+// Start from the top while there are still animations
+
+// Import the main model FBX file
+file -import -type "FBX"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Goat" -options "fbx"  -pr  -importFrameRate true  -importTimeRange "override" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\..\\fbxextraction\\Database\\Animal_Goat\\Goat.fbx";
+
+// Select the skeleton hierarchy
+select -r Root ;
+select -hierarchy;
+
+// Import the animation file.  
+file -import -type "animImport"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Notice_Look" -options "targetTime=4;copies=1;option=replace;pictures=0;connect=0;"  -pr  -importTimeRange "combine" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database\\Animal_Goat\\Notice_Look.anim";
+
+// Select the skeleton hierarchy again
+select -r Root ;
+select -hierarchy;
+
+// Export the skeleton selection
+file -force -options "v=0;" -typ "FBX export" -pr -es "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database2\\Animal_Goat\\Animal_Goat_Notice_Look.fbx";
+deleteUI -window FbxWarningWindow;
+
+// Completely clear scene (perhaps a more elegant approach elsewhere?)
+file -f -new;
+
+// Start from the top while there are still animations
+
+// Import the main model FBX file
+file -import -type "FBX"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Goat" -options "fbx"  -pr  -importFrameRate true  -importTimeRange "override" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\..\\fbxextraction\\Database\\Animal_Goat\\Goat.fbx";
+
+// Select the skeleton hierarchy
+select -r Root ;
+select -hierarchy;
+
+// Import the animation file.  
+file -import -type "animImport"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Notice_Run_St" -options "targetTime=4;copies=1;option=replace;pictures=0;connect=0;"  -pr  -importTimeRange "combine" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database\\Animal_Goat\\Notice_Run_St.anim";
+
+// Select the skeleton hierarchy again
+select -r Root ;
+select -hierarchy;
+
+// Export the skeleton selection
+file -force -options "v=0;" -typ "FBX export" -pr -es "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database2\\Animal_Goat\\Animal_Goat_Notice_Run_St.fbx";
+deleteUI -window FbxWarningWindow;
+
+// Completely clear scene (perhaps a more elegant approach elsewhere?)
+file -f -new;
+
+// Start from the top while there are still animations
+
+// Import the main model FBX file
+file -import -type "FBX"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Goat" -options "fbx"  -pr  -importFrameRate true  -importTimeRange "override" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\..\\fbxextraction\\Database\\Animal_Goat\\Goat.fbx";
+
+// Select the skeleton hierarchy
+select -r Root ;
+select -hierarchy;
+
+// Import the animation file.  
+file -import -type "animImport"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Notice_Run_St_L" -options "targetTime=4;copies=1;option=replace;pictures=0;connect=0;"  -pr  -importTimeRange "combine" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database\\Animal_Goat\\Notice_Run_St_L.anim";
+
+// Select the skeleton hierarchy again
+select -r Root ;
+select -hierarchy;
+
+// Export the skeleton selection
+file -force -options "v=0;" -typ "FBX export" -pr -es "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database2\\Animal_Goat\\Animal_Goat_Notice_Run_St_L.fbx";
+deleteUI -window FbxWarningWindow;
+
+// Completely clear scene (perhaps a more elegant approach elsewhere?)
+file -f -new;
+
+// Start from the top while there are still animations
+
+// Import the main model FBX file
+file -import -type "FBX"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Goat" -options "fbx"  -pr  -importFrameRate true  -importTimeRange "override" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\..\\fbxextraction\\Database\\Animal_Goat\\Goat.fbx";
+
+// Select the skeleton hierarchy
+select -r Root ;
+select -hierarchy;
+
+// Import the animation file.  
+file -import -type "animImport"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Notice_Run_St_R" -options "targetTime=4;copies=1;option=replace;pictures=0;connect=0;"  -pr  -importTimeRange "combine" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database\\Animal_Goat\\Notice_Run_St_R.anim";
+
+// Select the skeleton hierarchy again
+select -r Root ;
+select -hierarchy;
+
+// Export the skeleton selection
+file -force -options "v=0;" -typ "FBX export" -pr -es "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database2\\Animal_Goat\\Animal_Goat_Notice_Run_St_R.fbx";
+deleteUI -window FbxWarningWindow;
+
+// Completely clear scene (perhaps a more elegant approach elsewhere?)
+file -f -new;
+
+// Start from the top while there are still animations
+
+// Import the main model FBX file
+file -import -type "FBX"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Goat" -options "fbx"  -pr  -importFrameRate true  -importTimeRange "override" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\..\\fbxextraction\\Database\\Animal_Goat\\Goat.fbx";
+
+// Select the skeleton hierarchy
+select -r Root ;
+select -hierarchy;
+
+// Import the animation file.  
+file -import -type "animImport"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Notice_Turn" -options "targetTime=4;copies=1;option=replace;pictures=0;connect=0;"  -pr  -importTimeRange "combine" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database\\Animal_Goat\\Notice_Turn.anim";
+
+// Select the skeleton hierarchy again
+select -r Root ;
+select -hierarchy;
+
+// Export the skeleton selection
+file -force -options "v=0;" -typ "FBX export" -pr -es "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database2\\Animal_Goat\\Animal_Goat_Notice_Turn.fbx";
+deleteUI -window FbxWarningWindow;
+
+// Completely clear scene (perhaps a more elegant approach elsewhere?)
+file -f -new;
+
+// Start from the top while there are still animations
+
+// Import the main model FBX file
+file -import -type "FBX"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Goat" -options "fbx"  -pr  -importFrameRate true  -importTimeRange "override" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\..\\fbxextraction\\Database\\Animal_Goat\\Goat.fbx";
+
+// Select the skeleton hierarchy
+select -r Root ;
+select -hierarchy;
+
+// Import the animation file.  
+file -import -type "animImport"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Notice_Turn_L" -options "targetTime=4;copies=1;option=replace;pictures=0;connect=0;"  -pr  -importTimeRange "combine" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database\\Animal_Goat\\Notice_Turn_L.anim";
+
+// Select the skeleton hierarchy again
+select -r Root ;
+select -hierarchy;
+
+// Export the skeleton selection
+file -force -options "v=0;" -typ "FBX export" -pr -es "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database2\\Animal_Goat\\Animal_Goat_Notice_Turn_L.fbx";
+deleteUI -window FbxWarningWindow;
+
+// Completely clear scene (perhaps a more elegant approach elsewhere?)
+file -f -new;
+
+// Start from the top while there are still animations
+
+// Import the main model FBX file
+file -import -type "FBX"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Goat" -options "fbx"  -pr  -importFrameRate true  -importTimeRange "override" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\..\\fbxextraction\\Database\\Animal_Goat\\Goat.fbx";
+
+// Select the skeleton hierarchy
+select -r Root ;
+select -hierarchy;
+
+// Import the animation file.  
+file -import -type "animImport"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Notice_Turn_R" -options "targetTime=4;copies=1;option=replace;pictures=0;connect=0;"  -pr  -importTimeRange "combine" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database\\Animal_Goat\\Notice_Turn_R.anim";
+
+// Select the skeleton hierarchy again
+select -r Root ;
+select -hierarchy;
+
+// Export the skeleton selection
+file -force -options "v=0;" -typ "FBX export" -pr -es "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database2\\Animal_Goat\\Animal_Goat_Notice_Turn_R.fbx";
+deleteUI -window FbxWarningWindow;
+
+// Completely clear scene (perhaps a more elegant approach elsewhere?)
+file -f -new;
+
+// Start from the top while there are still animations
+
+// Import the main model FBX file
+file -import -type "FBX"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Goat" -options "fbx"  -pr  -importFrameRate true  -importTimeRange "override" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\..\\fbxextraction\\Database\\Animal_Goat\\Goat.fbx";
+
+// Select the skeleton hierarchy
+select -r Root ;
+select -hierarchy;
+
+// Import the animation file.  
+file -import -type "animImport"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Stagger_L" -options "targetTime=4;copies=1;option=replace;pictures=0;connect=0;"  -pr  -importTimeRange "combine" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database\\Animal_Goat\\Stagger_L.anim";
+
+// Select the skeleton hierarchy again
+select -r Root ;
+select -hierarchy;
+
+// Export the skeleton selection
+file -force -options "v=0;" -typ "FBX export" -pr -es "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database2\\Animal_Goat\\Animal_Goat_Stagger_L.fbx";
+deleteUI -window FbxWarningWindow;
+
+// Completely clear scene (perhaps a more elegant approach elsewhere?)
+file -f -new;
+
+// Start from the top while there are still animations
+
+// Import the main model FBX file
+file -import -type "FBX"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Goat" -options "fbx"  -pr  -importFrameRate true  -importTimeRange "override" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\..\\fbxextraction\\Database\\Animal_Goat\\Goat.fbx";
+
+// Select the skeleton hierarchy
+select -r Root ;
+select -hierarchy;
+
+// Import the animation file.  
+file -import -type "animImport"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Stagger_R" -options "targetTime=4;copies=1;option=replace;pictures=0;connect=0;"  -pr  -importTimeRange "combine" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database\\Animal_Goat\\Stagger_R.anim";
+
+// Select the skeleton hierarchy again
+select -r Root ;
+select -hierarchy;
+
+// Export the skeleton selection
+file -force -options "v=0;" -typ "FBX export" -pr -es "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database2\\Animal_Goat\\Animal_Goat_Stagger_R.fbx";
+deleteUI -window FbxWarningWindow;
+
+// Completely clear scene (perhaps a more elegant approach elsewhere?)
+file -f -new;
+
+// Start from the top while there are still animations
+
+// Import the main model FBX file
+file -import -type "FBX"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Goat" -options "fbx"  -pr  -importFrameRate true  -importTimeRange "override" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\..\\fbxextraction\\Database\\Animal_Goat\\Goat.fbx";
+
+// Select the skeleton hierarchy
+select -r Root ;
+select -hierarchy;
+
+// Import the animation file.  
+file -import -type "animImport"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Wait" -options "targetTime=4;copies=1;option=replace;pictures=0;connect=0;"  -pr  -importTimeRange "combine" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database\\Animal_Goat\\Wait.anim";
+
+// Select the skeleton hierarchy again
+select -r Root ;
+select -hierarchy;
+
+// Export the skeleton selection
+file -force -options "v=0;" -typ "FBX export" -pr -es "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database2\\Animal_Goat\\Animal_Goat_Wait.fbx";
+deleteUI -window FbxWarningWindow;
+
+// Completely clear scene (perhaps a more elegant approach elsewhere?)
+file -f -new;
+
+// Start from the top while there are still animations
+
+// Import the main model FBX file
+file -import -type "FBX"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Goat" -options "fbx"  -pr  -importFrameRate true  -importTimeRange "override" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\..\\fbxextraction\\Database\\Animal_Goat\\Goat.fbx";
+
+// Select the skeleton hierarchy
+select -r Root ;
+select -hierarchy;
+
+// Import the animation file.  
+file -import -type "animImport"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Wait_DownSlope" -options "targetTime=4;copies=1;option=replace;pictures=0;connect=0;"  -pr  -importTimeRange "combine" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database\\Animal_Goat\\Wait_DownSlope.anim";
+
+// Select the skeleton hierarchy again
+select -r Root ;
+select -hierarchy;
+
+// Export the skeleton selection
+file -force -options "v=0;" -typ "FBX export" -pr -es "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database2\\Animal_Goat\\Animal_Goat_Wait_DownSlope.fbx";
+deleteUI -window FbxWarningWindow;
+
+// Completely clear scene (perhaps a more elegant approach elsewhere?)
+file -f -new;
+
+// Start from the top while there are still animations
+
+// Import the main model FBX file
+file -import -type "FBX"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Goat" -options "fbx"  -pr  -importFrameRate true  -importTimeRange "override" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\..\\fbxextraction\\Database\\Animal_Goat\\Goat.fbx";
+
+// Select the skeleton hierarchy
+select -r Root ;
+select -hierarchy;
+
+// Import the animation file.  
+file -import -type "animImport"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Wait_Random_A" -options "targetTime=4;copies=1;option=replace;pictures=0;connect=0;"  -pr  -importTimeRange "combine" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database\\Animal_Goat\\Wait_Random_A.anim";
+
+// Select the skeleton hierarchy again
+select -r Root ;
+select -hierarchy;
+
+// Export the skeleton selection
+file -force -options "v=0;" -typ "FBX export" -pr -es "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database2\\Animal_Goat\\Animal_Goat_Wait_Random_A.fbx";
+deleteUI -window FbxWarningWindow;
+
+// Completely clear scene (perhaps a more elegant approach elsewhere?)
+file -f -new;
+
+// Start from the top while there are still animations
+
+// Import the main model FBX file
+file -import -type "FBX"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Goat" -options "fbx"  -pr  -importFrameRate true  -importTimeRange "override" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\..\\fbxextraction\\Database\\Animal_Goat\\Goat.fbx";
+
+// Select the skeleton hierarchy
+select -r Root ;
+select -hierarchy;
+
+// Import the animation file.  
+file -import -type "animImport"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Wait_Random_A_DownSlope" -options "targetTime=4;copies=1;option=replace;pictures=0;connect=0;"  -pr  -importTimeRange "combine" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database\\Animal_Goat\\Wait_Random_A_DownSlope.anim";
+
+// Select the skeleton hierarchy again
+select -r Root ;
+select -hierarchy;
+
+// Export the skeleton selection
+file -force -options "v=0;" -typ "FBX export" -pr -es "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database2\\Animal_Goat\\Animal_Goat_Wait_Random_A_DownSlope.fbx";
+deleteUI -window FbxWarningWindow;
+
+// Completely clear scene (perhaps a more elegant approach elsewhere?)
+file -f -new;
+
+// Start from the top while there are still animations
+
+// Import the main model FBX file
+file -import -type "FBX"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Goat" -options "fbx"  -pr  -importFrameRate true  -importTimeRange "override" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\..\\fbxextraction\\Database\\Animal_Goat\\Goat.fbx";
+
+// Select the skeleton hierarchy
+select -r Root ;
+select -hierarchy;
+
+// Import the animation file.  
+file -import -type "animImport"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Wait_Random_A_UpSlope" -options "targetTime=4;copies=1;option=replace;pictures=0;connect=0;"  -pr  -importTimeRange "combine" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database\\Animal_Goat\\Wait_Random_A_UpSlope.anim";
+
+// Select the skeleton hierarchy again
+select -r Root ;
+select -hierarchy;
+
+// Export the skeleton selection
+file -force -options "v=0;" -typ "FBX export" -pr -es "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database2\\Animal_Goat\\Animal_Goat_Wait_Random_A_UpSlope.fbx";
+deleteUI -window FbxWarningWindow;
+
+// Completely clear scene (perhaps a more elegant approach elsewhere?)
+file -f -new;
+
+// Start from the top while there are still animations
+
+// Import the main model FBX file
+file -import -type "FBX"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Goat" -options "fbx"  -pr  -importFrameRate true  -importTimeRange "override" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\..\\fbxextraction\\Database\\Animal_Goat\\Goat.fbx";
+
+// Select the skeleton hierarchy
+select -r Root ;
+select -hierarchy;
+
+// Import the animation file.  
+file -import -type "animImport"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Wait_Random_B" -options "targetTime=4;copies=1;option=replace;pictures=0;connect=0;"  -pr  -importTimeRange "combine" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database\\Animal_Goat\\Wait_Random_B.anim";
+
+// Select the skeleton hierarchy again
+select -r Root ;
+select -hierarchy;
+
+// Export the skeleton selection
+file -force -options "v=0;" -typ "FBX export" -pr -es "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database2\\Animal_Goat\\Animal_Goat_Wait_Random_B.fbx";
+deleteUI -window FbxWarningWindow;
+
+// Completely clear scene (perhaps a more elegant approach elsewhere?)
+file -f -new;
+
+// Start from the top while there are still animations
+
+// Import the main model FBX file
+file -import -type "FBX"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Goat" -options "fbx"  -pr  -importFrameRate true  -importTimeRange "override" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\..\\fbxextraction\\Database\\Animal_Goat\\Goat.fbx";
+
+// Select the skeleton hierarchy
+select -r Root ;
+select -hierarchy;
+
+// Import the animation file.  
+file -import -type "animImport"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Wait_Random_B_DownSlope" -options "targetTime=4;copies=1;option=replace;pictures=0;connect=0;"  -pr  -importTimeRange "combine" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database\\Animal_Goat\\Wait_Random_B_DownSlope.anim";
+
+// Select the skeleton hierarchy again
+select -r Root ;
+select -hierarchy;
+
+// Export the skeleton selection
+file -force -options "v=0;" -typ "FBX export" -pr -es "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database2\\Animal_Goat\\Animal_Goat_Wait_Random_B_DownSlope.fbx";
+deleteUI -window FbxWarningWindow;
+
+// Completely clear scene (perhaps a more elegant approach elsewhere?)
+file -f -new;
+
+// Start from the top while there are still animations
+
+// Import the main model FBX file
+file -import -type "FBX"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Goat" -options "fbx"  -pr  -importFrameRate true  -importTimeRange "override" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\..\\fbxextraction\\Database\\Animal_Goat\\Goat.fbx";
+
+// Select the skeleton hierarchy
+select -r Root ;
+select -hierarchy;
+
+// Import the animation file.  
+file -import -type "animImport"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Wait_Random_B_Sheep" -options "targetTime=4;copies=1;option=replace;pictures=0;connect=0;"  -pr  -importTimeRange "combine" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database\\Animal_Goat\\Wait_Random_B_Sheep.anim";
+
+// Select the skeleton hierarchy again
+select -r Root ;
+select -hierarchy;
+
+// Export the skeleton selection
+file -force -options "v=0;" -typ "FBX export" -pr -es "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database2\\Animal_Goat\\Animal_Goat_Wait_Random_B_Sheep.fbx";
+deleteUI -window FbxWarningWindow;
+
+// Completely clear scene (perhaps a more elegant approach elsewhere?)
+file -f -new;
+
+// Start from the top while there are still animations
+
+// Import the main model FBX file
+file -import -type "FBX"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Goat" -options "fbx"  -pr  -importFrameRate true  -importTimeRange "override" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\..\\fbxextraction\\Database\\Animal_Goat\\Goat.fbx";
+
+// Select the skeleton hierarchy
+select -r Root ;
+select -hierarchy;
+
+// Import the animation file.  
+file -import -type "animImport"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Wait_Random_B_Sheep_DownSlope" -options "targetTime=4;copies=1;option=replace;pictures=0;connect=0;"  -pr  -importTimeRange "combine" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database\\Animal_Goat\\Wait_Random_B_Sheep_DownSlope.anim";
+
+// Select the skeleton hierarchy again
+select -r Root ;
+select -hierarchy;
+
+// Export the skeleton selection
+file -force -options "v=0;" -typ "FBX export" -pr -es "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database2\\Animal_Goat\\Animal_Goat_Wait_Random_B_Sheep_DownSlope.fbx";
+deleteUI -window FbxWarningWindow;
+
+// Completely clear scene (perhaps a more elegant approach elsewhere?)
+file -f -new;
+
+// Start from the top while there are still animations
+
+// Import the main model FBX file
+file -import -type "FBX"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Goat" -options "fbx"  -pr  -importFrameRate true  -importTimeRange "override" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\..\\fbxextraction\\Database\\Animal_Goat\\Goat.fbx";
+
+// Select the skeleton hierarchy
+select -r Root ;
+select -hierarchy;
+
+// Import the animation file.  
+file -import -type "animImport"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Wait_Random_B_Sheep_UpSlope" -options "targetTime=4;copies=1;option=replace;pictures=0;connect=0;"  -pr  -importTimeRange "combine" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database\\Animal_Goat\\Wait_Random_B_Sheep_UpSlope.anim";
+
+// Select the skeleton hierarchy again
+select -r Root ;
+select -hierarchy;
+
+// Export the skeleton selection
+file -force -options "v=0;" -typ "FBX export" -pr -es "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database2\\Animal_Goat\\Animal_Goat_Wait_Random_B_Sheep_UpSlope.fbx";
+deleteUI -window FbxWarningWindow;
+
+// Completely clear scene (perhaps a more elegant approach elsewhere?)
+file -f -new;
+
+// Start from the top while there are still animations
+
+// Import the main model FBX file
+file -import -type "FBX"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Goat" -options "fbx"  -pr  -importFrameRate true  -importTimeRange "override" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\..\\fbxextraction\\Database\\Animal_Goat\\Goat.fbx";
+
+// Select the skeleton hierarchy
+select -r Root ;
+select -hierarchy;
+
+// Import the animation file.  
+file -import -type "animImport"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Wait_Random_B_UpSlope" -options "targetTime=4;copies=1;option=replace;pictures=0;connect=0;"  -pr  -importTimeRange "combine" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database\\Animal_Goat\\Wait_Random_B_UpSlope.anim";
+
+// Select the skeleton hierarchy again
+select -r Root ;
+select -hierarchy;
+
+// Export the skeleton selection
+file -force -options "v=0;" -typ "FBX export" -pr -es "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database2\\Animal_Goat\\Animal_Goat_Wait_Random_B_UpSlope.fbx";
+deleteUI -window FbxWarningWindow;
+
+// Completely clear scene (perhaps a more elegant approach elsewhere?)
+file -f -new;
+
+// Start from the top while there are still animations
+
+// Import the main model FBX file
+file -import -type "FBX"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Goat" -options "fbx"  -pr  -importFrameRate true  -importTimeRange "override" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\..\\fbxextraction\\Database\\Animal_Goat\\Goat.fbx";
+
+// Select the skeleton hierarchy
+select -r Root ;
+select -hierarchy;
+
+// Import the animation file.  
+file -import -type "animImport"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Wait_Random_C" -options "targetTime=4;copies=1;option=replace;pictures=0;connect=0;"  -pr  -importTimeRange "combine" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database\\Animal_Goat\\Wait_Random_C.anim";
+
+// Select the skeleton hierarchy again
+select -r Root ;
+select -hierarchy;
+
+// Export the skeleton selection
+file -force -options "v=0;" -typ "FBX export" -pr -es "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database2\\Animal_Goat\\Animal_Goat_Wait_Random_C.fbx";
+deleteUI -window FbxWarningWindow;
+
+// Completely clear scene (perhaps a more elegant approach elsewhere?)
+file -f -new;
+
+// Start from the top while there are still animations
+
+// Import the main model FBX file
+file -import -type "FBX"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Goat" -options "fbx"  -pr  -importFrameRate true  -importTimeRange "override" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\..\\fbxextraction\\Database\\Animal_Goat\\Goat.fbx";
+
+// Select the skeleton hierarchy
+select -r Root ;
+select -hierarchy;
+
+// Import the animation file.  
+file -import -type "animImport"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Wait_Random_C_DownSlope" -options "targetTime=4;copies=1;option=replace;pictures=0;connect=0;"  -pr  -importTimeRange "combine" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database\\Animal_Goat\\Wait_Random_C_DownSlope.anim";
+
+// Select the skeleton hierarchy again
+select -r Root ;
+select -hierarchy;
+
+// Export the skeleton selection
+file -force -options "v=0;" -typ "FBX export" -pr -es "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database2\\Animal_Goat\\Animal_Goat_Wait_Random_C_DownSlope.fbx";
+deleteUI -window FbxWarningWindow;
+
+// Completely clear scene (perhaps a more elegant approach elsewhere?)
+file -f -new;
+
+// Start from the top while there are still animations
+
+// Import the main model FBX file
+file -import -type "FBX"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Goat" -options "fbx"  -pr  -importFrameRate true  -importTimeRange "override" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\..\\fbxextraction\\Database\\Animal_Goat\\Goat.fbx";
+
+// Select the skeleton hierarchy
+select -r Root ;
+select -hierarchy;
+
+// Import the animation file.  
+file -import -type "animImport"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Wait_Random_C_UpSlope" -options "targetTime=4;copies=1;option=replace;pictures=0;connect=0;"  -pr  -importTimeRange "combine" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database\\Animal_Goat\\Wait_Random_C_UpSlope.anim";
+
+// Select the skeleton hierarchy again
+select -r Root ;
+select -hierarchy;
+
+// Export the skeleton selection
+file -force -options "v=0;" -typ "FBX export" -pr -es "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database2\\Animal_Goat\\Animal_Goat_Wait_Random_C_UpSlope.fbx";
+deleteUI -window FbxWarningWindow;
+
+// Completely clear scene (perhaps a more elegant approach elsewhere?)
+file -f -new;
+
+// Start from the top while there are still animations
+
+// Import the main model FBX file
+file -import -type "FBX"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Goat" -options "fbx"  -pr  -importFrameRate true  -importTimeRange "override" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\..\\fbxextraction\\Database\\Animal_Goat\\Goat.fbx";
+
+// Select the skeleton hierarchy
+select -r Root ;
+select -hierarchy;
+
+// Import the animation file.  
+file -import -type "animImport"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Wait_UpSlope" -options "targetTime=4;copies=1;option=replace;pictures=0;connect=0;"  -pr  -importTimeRange "combine" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database\\Animal_Goat\\Wait_UpSlope.anim";
+
+// Select the skeleton hierarchy again
+select -r Root ;
+select -hierarchy;
+
+// Export the skeleton selection
+file -force -options "v=0;" -typ "FBX export" -pr -es "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database2\\Animal_Goat\\Animal_Goat_Wait_UpSlope.fbx";
+deleteUI -window FbxWarningWindow;
+
+// Completely clear scene (perhaps a more elegant approach elsewhere?)
+file -f -new;
+
+// Start from the top while there are still animations

@@ -1,0 +1,22 @@
+// Import the main model FBX file
+file -import -type "FBX"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Bass" -options "fbx"  -pr  -importFrameRate true  -importTimeRange "override" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\fbxextraction\\Database\\Animal_Bass\\Bass.fbx";
+
+// Select the skeleton hierarchy
+select -r Root ;
+select -hierarchy;
+
+// Import the animation file.  
+file -import -type "animImport"  -ignoreVersion -ra true -mergeNamespacesOnClash false -namespace "Dead" -options "targetTime=4;copies=1;option=replace;pictures=0;connect=0;"  -pr  -importTimeRange "combine" "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\animextraction\\Database\\Animal_Bass\\Dead.anim";
+
+// Select the skeleton hierarchy again
+select -r Root ;
+select -hierarchy;
+
+// Export the skeleton selection
+file -force -options "v=0;" -typ "FBX export" -pr -es "C:\\Users\\makiah\\Documents\\Bass_Dead.fbx";
+deleteUI -window FbxWarningWindow;
+
+// Completely clear scene (perhaps a more elegant approach elsewhere?)
+file -f -new;
+
+// Start from the top while there are still animations
