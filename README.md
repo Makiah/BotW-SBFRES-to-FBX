@@ -42,6 +42,14 @@ Additional requirements: None (everything included in `Libraries`).
 ### Model Extraction
 Uses RTB's BFRES extraction MAXScript via 3DS Max to render the model and load the previously extracted textures, then uses some MAXScript I wrote to automate the process via a startup script argument.  
 
+Please note for this section: models may appear disfigured or malformed in the Windows viewer for some reason, but they seem to typically render fine in a game engine.  
+
+<p align="center">
+  <img src="proofofconcept/renderingdifferences.PNG"/>
+</p>
+
+You'll probably have to coax the extraction through DgnObj items, since they're often forms this script can't handle (just close 3DSMax on error and the script will ignore this section and proceed onward).  
+
 Thanks to: Random Talking Bush for the [extraction script](https://www.vg-resource.com/thread-29836.html).  
 
 Additional requirements: 3DS Max 2015/16.  
