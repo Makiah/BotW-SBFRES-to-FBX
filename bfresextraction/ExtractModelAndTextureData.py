@@ -123,7 +123,6 @@ def extractModelAndTextureData():
         # SBFRES to BFRES to database.
         return extractSBFREStoRARC(sbfresFilePath)
 
-
     # Extract every file from the pair list database: the grunt work
     for currentModelTexturePair in mtPairList:
         # Output to the user what we are currently extracting and update the sbfresState pending model.
@@ -147,7 +146,7 @@ def extractModelAndTextureData():
         os.makedirs(pendingDatabaseSubdirectory)
 
         # Remove the something went wrong directory if it exists.
-        somethingWentWrongSubdirectory = completedDatabaseSubdirectory + " (Error)"
+        somethingWentWrongSubdirectory = completedDatabaseSubdirectory + " (Error!)"
         if os.path.exists(somethingWentWrongSubdirectory):
             shutil.rmtree(somethingWentWrongSubdirectory)
             print("Removed Error directory for " + currentModelTexturePair.itemName)
@@ -187,7 +186,7 @@ def extractModelAndTextureData():
                 extractDirectory = os.path.join(workspacePath, "texturefile")
                 if not os.path.exists(extractDirectory):
                     print("No textures were extracted from " + currentModelTexturePair.itemName + "!")
-                    continue
+                    continue # begin new model, but the BFRES was already moved if it existed.  
 
                 # Move the GTX files to the Convert directory and delete the texture folder.
                 for file in os.listdir(extractDirectory):

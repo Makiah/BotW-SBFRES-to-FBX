@@ -12,6 +12,9 @@ def extractAnimations():
 	# Required constants
 	smashForgeExecutableLoc = os.path.join(initialWD, "Libraries", "SmashForge", "Smash Forge.exe")
 	animFolderLoc = os.path.join(initialWD, "Libraries", "SmashForge", "animextractions")
+	if os.path.exists(animFolderLoc): 
+		shutil.rmtree(animFolderLoc)
+	os.makedirs(animFolderLoc)
 
 	# Run through the SBFRES compilation and copy the animation SBFRES files into the fbxextraction "Database" (link then by name)
 	animDatabase = os.path.join(initialWD, "Database")
