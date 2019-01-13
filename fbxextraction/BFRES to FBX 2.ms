@@ -1,4 +1,4 @@
-USER_WORKSPACE_PATH = "C:\\Users\\makiah\\Desktop\\BoTWSBFREStoFBX\\fbxextraction\\Workspace\\" 
+USER_WORKSPACE_PATH = "E:\\BotW-SBFRES-to-FBX\\fbxextraction\\Workspace\\" 
 
 -- Importer for Wii U / Switch BFRES files seen in many Nintendo games. 
 -- Written by ItsEasyActually and Random Talking Bush (with some help from Ploaj for 10-bit normal values, and Sylk for optimizations and assistance in general).
@@ -1115,58 +1115,58 @@ rollout BFRESImporter "Wii U / Switch BFRES model importer" width:450 height:300
 									) -- 1x4 floats
 								0x10: (matParamVarA1 = readBEfloat f; matParamVarA2 = readBEfloat f
 									print (matParamString as string + ": " + matParamVarA1 as string + ", " + matParamVarA2 as string)
-									) -- 2×1 floats
+									) -- 2x1 floats
 								0x11: (matParamVarA1 = readBEfloat f; matParamVarA2 = readBEfloat f
 									matParamVarB1 = readBEfloat f; matParamVarB2 = readBEfloat f
 									print (matParamString as string + ": " + matParamVarA1 as string + ", " + matParamVarA2 as string + " | " + matParamVarB1 as string + ", " + matParamVarB2 as string)
-									) -- 2×2 floats
+									) -- 2x2 floats
 								0x12: (matParamVarA1 = readBEfloat f; matParamVarA2 = readBEfloat f
 									matParamVarB1 = readBEfloat f; matParamVarB2 = readBEfloat f
 									matParamVarC1 = readBEfloat f; matParamVarC2 = readBEfloat f
 									print (matParamString as string + ": " + matParamVarA1 as string + ", " + matParamVarA2 as string + " | " + matParamVarB1 as string + ", " + matParamVarB2 as string + " | " + matParamVarC1 as string + ", " + matParamVarC2 as string)
-									) -- 2×3 floats
+									) -- 2x3 floats
 								0x13: (matParamVarA1 = readBEfloat f; matParamVarA2 = readBEfloat f
 									matParamVarB1 = readBEfloat f; matParamVarB2 = readBEfloat f
 									matParamVarC1 = readBEfloat f; matParamVarC2 = readBEfloat f
 									matParamVarD1 = readBEfloat f; matParamVarD2 = readBEfloat f
 									print (matParamString as string + ": " + matParamVarA1 as string + ", " + matParamVarA2 as string + " | " + matParamVarB1 as string + ", " + matParamVarB2 as string + " | " + matParamVarC1 as string + ", " + matParamVarC2 as string + " | " + matParamVarD1 as string + ", " + matParamVarD2 as string)
-									) -- 2×4 floats
+									) -- 2x4 floats
 								0x14: (matParamVarA1 = readBEfloat f; matParamVarA2 = readBEfloat f; matParamVarA3 = readBEfloat f
 									print (matParamString as string + ": " + matParamVarA1 as string + ", " + matParamVarA2 as string + ", " + matParamVarA3 as string)
-									) -- 3×1 floats
+									) -- 3x1 floats
 								0x15: (matParamVarA1 = readBEfloat f; matParamVarA2 = readBEfloat f; matParamVarA3 = readBEfloat f
 									matParamVarB1 = readBEfloat f; matParamVarB2 = readBEfloat f; matParamVarB3 = readBEfloat f
 									print (matParamString as string + ": " + matParamVarA1 as string + ", " + matParamVarA2 as string + ", " + matParamVarA3 as string + " | " + matParamVarB1 as string + ", " + matParamVarB2 as string + ", " + matParamVarB3 as string)
-									) -- 3×2 floats
+									) -- 3x2 floats
 								0x16: (matParamVarA1 = readBEfloat f; matParamVarA2 = readBEfloat f; matParamVarA3 = readBEfloat f
 									matParamVarB1 = readBEfloat f; matParamVarB2 = readBEfloat f; matParamVarB3 = readBEfloat f
 									matParamVarC1 = readBEfloat f; matParamVarC2 = readBEfloat f; matParamVarC3 = readBEfloat f
 									print (matParamString as string + ": " + matParamVarA1 as string + ", " + matParamVarA2 as string + ", " + matParamVarA3 as string + " | " + matParamVarB1 as string + ", " + matParamVarB2 as string + ", " + matParamVarB3 as string + " | " + matParamVarC1 as string + ", " + matParamVarC2 as string + ", " + matParamVarC3 as string)
-									) -- 3×3 floats
+									) -- 3x3 floats
 								0x17: (matParamVarA1 = readBEfloat f; matParamVarA2 = readBEfloat f; matParamVarA3 = readBEfloat f
 									matParamVarB1 = readBEfloat f; matParamVarB2 = readBEfloat f; matParamVarB3 = readBEfloat f
 									matParamVarC1 = readBEfloat f; matParamVarC2 = readBEfloat f; matParamVarC3 = readBEfloat f
 									matParamVarD1 = readBEfloat f; matParamVarD2 = readBEfloat f; matParamVarD3 = readBEfloat f
 									print (matParamString as string + ": " + matParamVarA1 as string + ", " + matParamVarA2 as string + ", " + matParamVarA3 as string + " | " + matParamVarB1 as string + ", " + matParamVarB2 as string + ", " + matParamVarB3 as string + " | " + matParamVarC1 as string + ", " + matParamVarC2 as string + ", " + matParamVarC3 as string + " | " + matParamVarD1 as string + ", " + matParamVarD2 as string + ", " + matParamVarD3 as string)
-									) -- 3×4 floats
+									) -- 3x4 floats
 								0x18: (matParamVarA1 = readBEfloat f; matParamVarA2 = readBEfloat f; matParamVarA3 = readBEfloat f; matParamVarA4 = readBEfloat f
 									print (matParamString as string + ": " + matParamVarA1 as string + ", " + matParamVarA2 as string + ", " + matParamVarA3 as string + ", " + matParamVarA4 as string)
 									) -- 4x1 floats
 								0x19: (matParamVarA1 = readBEfloat f; matParamVarA2 = readBEfloat f; matParamVarA3 = readBEfloat f; matParamVarA4 = readBEfloat f
 									matParamVarB1 = readBEfloat f; matParamVarB2 = readBEfloat f; matParamVarB3 = readBEfloat f; matParamVarB4 = readBEfloat f
 									print (matParamString as string + ": " + matParamVarA1 as string + ", " + matParamVarA2 as string + ", " + matParamVarA3 as string + ", " + matParamVarA4 as string + " | " + matParamVarB1 as string + ", " + matParamVarB2 as string + ", " + matParamVarB3 as string + ", " + matParamVarB4 as string)
-									) -- 4×2 floats
+									) -- 4x2 floats
 								0x1A: (matParamVarA1 = readBEfloat f; matParamVarA2 = readBEfloat f; matParamVarA3 = readBEfloat f; matParamVarA4 = readBEfloat f
 									matParamVarB1 = readBEfloat f; matParamVarB2 = readBEfloat f; matParamVarB3 = readBEfloat f; matParamVarB4 = readBEfloat f
 									matParamVarC1 = readBEfloat f; matParamVarC2 = readBEfloat f; matParamVarC3 = readBEfloat f; matParamVarC4 = readBEfloat f
 									print (matParamString as string + ": " + matParamVarA1 as string + ", " + matParamVarA2 as string + ", " + matParamVarA3 as string + ", " + matParamVarA4 as string + " | " + matParamVarB1 as string + ", " + matParamVarB2 as string + ", " + matParamVarB3 as string + ", " + matParamVarB4 as string + " | " + matParamVarC1 as string + ", " + matParamVarC2 as string + ", " + matParamVarC3 as string + ", " + matParamVarC4 as string)
-									) -- 4×3 floats
+									) -- 4x3 floats
 								0x1B: (matParamVarA1 = readBEfloat f; matParamVarA2 = readBEfloat f; matParamVarA3 = readBEfloat f; matParamVarA4 = readBEfloat f
 									matParamVarB1 = readBEfloat f; matParamVarB2 = readBEfloat f; matParamVarB3 = readBEfloat f; matParamVarB4 = readBEfloat f
 									matParamVarC1 = readBEfloat f; matParamVarC2 = readBEfloat f; matParamVarC3 = readBEfloat f; matParamVarC4 = readBEfloat f
 									matParamVarD1 = readBEfloat f; matParamVarD2 = readBEfloat f; matParamVarD3 = readBEfloat f; matParamVarD4 = readBEfloat f
 									print (matParamString as string + ": " + matParamVarA1 as string + ", " + matParamVarA2 as string + ", " + matParamVarA3 as string + ", " + matParamVarA4 as string + " | " + matParamVarB1 as string + ", " + matParamVarB2 as string + ", " + matParamVarB3 as string + ", " + matParamVarB4 as string + " | " + matParamVarC1 as string + ", " + matParamVarC2 as string + ", " + matParamVarC3 as string + ", " + matParamVarC4 as string + " | " + matParamVarD1 as string + ", " + matParamVarD2 as string + ", " + matParamVarD3 as string + ", " + matParamVarD4 as string)
-									) -- 4×4 floats
+									) -- 4x4 floats
 								0x1C: (matParamSRTXScl = readBEfloat f; matParamSRTYScl = readBEfloat f; matParamSRTRot = readBEfloat f; matParamSRTXTrs = readBEfloat f; matParamSRTYTrs = readBEfloat f
 									print (matParamString as string + ": 2D Scale X = " + matParamSRTXScl as string + ", Y = " + matParamSRTYScl as string + " | Rotate = " + matParamSRTRot as string + " | Translation X = " + matParamSRTXTrs as string + ", Y = " + matParamSRTYTrs as string)
 									) -- 2D SRT
@@ -2543,58 +2543,58 @@ rollout BFRESImporter "Wii U / Switch BFRES model importer" width:450 height:300
 									) -- 1x4 floats
 								0x10: (matParamVarA1 = readfloat f; matParamVarA2 = readfloat f
 									print (matParamString as string + ": " + matParamVarA1 as string + ", " + matParamVarA2 as string)
-									) -- 2×1 floats
+									) -- 2x1 floats
 								0x11: (matParamVarA1 = readfloat f; matParamVarA2 = readfloat f
 									matParamVarB1 = readfloat f; matParamVarB2 = readfloat f
 									print (matParamString as string + ": " + matParamVarA1 as string + ", " + matParamVarA2 as string + " | " + matParamVarB1 as string + ", " + matParamVarB2 as string)
-									) -- 2×2 floats
+									) -- 2x2 floats
 								0x12: (matParamVarA1 = readfloat f; matParamVarA2 = readfloat f
 									matParamVarB1 = readfloat f; matParamVarB2 = readfloat f
 									matParamVarC1 = readfloat f; matParamVarC2 = readfloat f
 									print (matParamString as string + ": " + matParamVarA1 as string + ", " + matParamVarA2 as string + " | " + matParamVarB1 as string + ", " + matParamVarB2 as string + " | " + matParamVarC1 as string + ", " + matParamVarC2 as string)
-									) -- 2×3 floats
+									) -- 2x3 floats
 								0x13: (matParamVarA1 = readfloat f; matParamVarA2 = readfloat f
 									matParamVarB1 = readfloat f; matParamVarB2 = readfloat f
 									matParamVarC1 = readfloat f; matParamVarC2 = readfloat f
 									matParamVarD1 = readfloat f; matParamVarD2 = readfloat f
 									print (matParamString as string + ": " + matParamVarA1 as string + ", " + matParamVarA2 as string + " | " + matParamVarB1 as string + ", " + matParamVarB2 as string + " | " + matParamVarC1 as string + ", " + matParamVarC2 as string + " | " + matParamVarD1 as string + ", " + matParamVarD2 as string)
-									) -- 2×4 floats
+									) -- 2x4 floats
 								0x14: (matParamVarA1 = readfloat f; matParamVarA2 = readfloat f; matParamVarA3 = readfloat f
 									print (matParamString as string + ": " + matParamVarA1 as string + ", " + matParamVarA2 as string + ", " + matParamVarA3 as string)
-									) -- 3×1 floats
+									) -- 3x1 floats
 								0x15: (matParamVarA1 = readfloat f; matParamVarA2 = readfloat f; matParamVarA3 = readfloat f
 									matParamVarB1 = readfloat f; matParamVarB2 = readfloat f; matParamVarB3 = readfloat f
 									print (matParamString as string + ": " + matParamVarA1 as string + ", " + matParamVarA2 as string + ", " + matParamVarA3 as string + " | " + matParamVarB1 as string + ", " + matParamVarB2 as string + ", " + matParamVarB3 as string)
-									) -- 3×2 floats
+									) -- 3x2 floats
 								0x16: (matParamVarA1 = readfloat f; matParamVarA2 = readfloat f; matParamVarA3 = readfloat f
 									matParamVarB1 = readfloat f; matParamVarB2 = readfloat f; matParamVarB3 = readfloat f
 									matParamVarC1 = readfloat f; matParamVarC2 = readfloat f; matParamVarC3 = readfloat f
 									print (matParamString as string + ": " + matParamVarA1 as string + ", " + matParamVarA2 as string + ", " + matParamVarA3 as string + " | " + matParamVarB1 as string + ", " + matParamVarB2 as string + ", " + matParamVarB3 as string + " | " + matParamVarC1 as string + ", " + matParamVarC2 as string + ", " + matParamVarC3 as string)
-									) -- 3×3 floats
+									) -- 3x3 floats
 								0x17: (matParamVarA1 = readfloat f; matParamVarA2 = readfloat f; matParamVarA3 = readfloat f
 									matParamVarB1 = readfloat f; matParamVarB2 = readfloat f; matParamVarB3 = readfloat f
 									matParamVarC1 = readfloat f; matParamVarC2 = readfloat f; matParamVarC3 = readfloat f
 									matParamVarD1 = readfloat f; matParamVarD2 = readfloat f; matParamVarD3 = readfloat f
 									print (matParamString as string + ": " + matParamVarA1 as string + ", " + matParamVarA2 as string + ", " + matParamVarA3 as string + " | " + matParamVarB1 as string + ", " + matParamVarB2 as string + ", " + matParamVarB3 as string + " | " + matParamVarC1 as string + ", " + matParamVarC2 as string + ", " + matParamVarC3 as string + " | " + matParamVarD1 as string + ", " + matParamVarD2 as string + ", " + matParamVarD3 as string)
-									) -- 3×4 floats
+									) -- 3x4 floats
 								0x18: (matParamVarA1 = readfloat f; matParamVarA2 = readfloat f; matParamVarA3 = readfloat f; matParamVarA4 = readfloat f
 									print (matParamString as string + ": " + matParamVarA1 as string + ", " + matParamVarA2 as string + ", " + matParamVarA3 as string + ", " + matParamVarA4 as string)
 									) -- 4x1 floats
 								0x19: (matParamVarA1 = readfloat f; matParamVarA2 = readfloat f; matParamVarA3 = readfloat f; matParamVarA4 = readfloat f
 									matParamVarB1 = readfloat f; matParamVarB2 = readfloat f; matParamVarB3 = readfloat f; matParamVarB4 = readfloat f
 									print (matParamString as string + ": " + matParamVarA1 as string + ", " + matParamVarA2 as string + ", " + matParamVarA3 as string + ", " + matParamVarA4 as string + " | " + matParamVarB1 as string + ", " + matParamVarB2 as string + ", " + matParamVarB3 as string + ", " + matParamVarB4 as string)
-									) -- 4×2 floats
+									) -- 4x2 floats
 								0x1A: (matParamVarA1 = readfloat f; matParamVarA2 = readfloat f; matParamVarA3 = readfloat f; matParamVarA4 = readfloat f
 									matParamVarB1 = readfloat f; matParamVarB2 = readfloat f; matParamVarB3 = readfloat f; matParamVarB4 = readfloat f
 									matParamVarC1 = readfloat f; matParamVarC2 = readfloat f; matParamVarC3 = readfloat f; matParamVarC4 = readfloat f
 									print (matParamString as string + ": " + matParamVarA1 as string + ", " + matParamVarA2 as string + ", " + matParamVarA3 as string + ", " + matParamVarA4 as string + " | " + matParamVarB1 as string + ", " + matParamVarB2 as string + ", " + matParamVarB3 as string + ", " + matParamVarB4 as string + " | " + matParamVarC1 as string + ", " + matParamVarC2 as string + ", " + matParamVarC3 as string + ", " + matParamVarC4 as string)
-									) -- 4×3 floats
+									) -- 4x3 floats
 								0x1B: (matParamVarA1 = readfloat f; matParamVarA2 = readfloat f; matParamVarA3 = readfloat f; matParamVarA4 = readfloat f
 									matParamVarB1 = readfloat f; matParamVarB2 = readfloat f; matParamVarB3 = readfloat f; matParamVarB4 = readfloat f
 									matParamVarC1 = readfloat f; matParamVarC2 = readfloat f; matParamVarC3 = readfloat f; matParamVarC4 = readfloat f
 									matParamVarD1 = readfloat f; matParamVarD2 = readfloat f; matParamVarD3 = readfloat f; matParamVarD4 = readfloat f
 									print (matParamString as string + ": " + matParamVarA1 as string + ", " + matParamVarA2 as string + ", " + matParamVarA3 as string + ", " + matParamVarA4 as string + " | " + matParamVarB1 as string + ", " + matParamVarB2 as string + ", " + matParamVarB3 as string + ", " + matParamVarB4 as string + " | " + matParamVarC1 as string + ", " + matParamVarC2 as string + ", " + matParamVarC3 as string + ", " + matParamVarC4 as string + " | " + matParamVarD1 as string + ", " + matParamVarD2 as string + ", " + matParamVarD3 as string + ", " + matParamVarD4 as string)
-									) -- 4×4 floats
+									) -- 4x4 floats
 								0x1C: (matParamSRTXScl = readfloat f; matParamSRTYScl = readfloat f; matParamSRTRot = readfloat f; matParamSRTXTrs = readfloat f; matParamSRTYTrs = readfloat f
 									print (matParamString as string + ": 2D Scale X = " + matParamSRTXScl as string + ", Y = " + matParamSRTYScl as string + " | Rotate = " + matParamSRTRot as string + " | Translation X = " + matParamSRTXTrs as string + ", Y = " + matParamSRTYTrs as string)
 									) -- 2D SRT
